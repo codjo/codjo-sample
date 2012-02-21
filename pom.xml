@@ -9,7 +9,7 @@
      -->
 
     <groupId>net.codjo.sample</groupId>
-    <artifactId>codjo-sample</artifactId>
+    <artifactId>sample</artifactId>
     <version>1.0-0-SNAPSHOT</version>
     <!-- START SNIPPET: super-pom -->
     <parent>

@@ -2,10 +2,17 @@
 <story id="Export" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="file:C:/dev/platform/cache/xsd/sample-story.xsd">
     <input>
+        <PM_SOURCE_SYSTEM>
+            <row>
+                <SOURCE_SYSTEM value="codjo"/>
+                <DATE_FORMAT value="yyyyMM"/>
+                <DECIMAL_SEPARATOR value="."/>
+            </row>
+        </PM_SOURCE_SYSTEM>
         <PM_BROADCAST_FILES>
             <row>
                 <FILE_NAME value="Livres.txt"/>
-                <!--<DESTINATION_SYSTEM value=""/>-->
+                <DESTINATION_SYSTEM value="codjo"/>
                 <AUTO_DISTRIBUTION value="false"/>
                 <HISTORISE_FILE value="false"/>
                 <FILE_ID value="1"/>
@@ -19,14 +26,14 @@
             <row>
                 <FIXED_LENGTH value="true"/>
                 <SECTION_NAME value="James Elroy"/>
-                <FAMILY value="book"/>
+                <FAMILY value="BOOKS"/>
                 <SELECTION_ID value="0"/>
                 <SECTION_ID value="1"/>
             </row>
             <row>
                 <FIXED_LENGTH value="true"/>
-                <SECTION_NAME value="Emetteurs vers GPF"/>
-                <FAMILY value="book"/>
+                <SECTION_NAME value="Ken Follett"/>
+                <FAMILY value="BOOKS"/>
                 <SELECTION_ID value="0"/>
                 <SECTION_ID value="2"/>
             </row>
@@ -77,6 +84,7 @@
                 <PADDING_CARACTER value=""/>
                 <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
+                <COLUMN_DATE_FORMAT value="yyyyMM"/>
                 <COLUMN_LENGTH value="30"/>
                 <COLUMNS_ID value="3"/>
                 <COLUMN_NUMBER value="30"/>
@@ -101,7 +109,7 @@
                 <DB_TABLE_NAME value="AP_BOOK"/>
                 <COLUMN_LENGTH value="7"/>
                 <COLUMNS_ID value="5"/>
-                <COLUMN_NUMBER value="40"/>
+                <COLUMN_NUMBER value="50"/>
                 <COLUMN_NAME value="Auteur"/>
                 <SECTION_ID value="2"/>
             </row>
@@ -110,6 +118,7 @@
                 <PADDING_CARACTER value=""/>
                 <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
+                <COLUMN_DATE_FORMAT value="yyyyMM"/>
                 <COLUMN_LENGTH value="30"/>
                 <COLUMNS_ID value="6"/>
                 <COLUMN_NUMBER value="60"/>

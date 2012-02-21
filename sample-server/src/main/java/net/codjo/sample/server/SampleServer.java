@@ -30,14 +30,15 @@ public class SampleServer {
         server.addPlugin(ImportServerPlugin.class);
         server.addPlugin(ControlServerPlugin.class);
         server.addPlugin(BroadcastServerPlugin.class);
-//        server.addPlugin(SampleServerPlugin.class);
+
+        server.addPlugin(SampleServerPlugin.class);
 
         server.startAndExitIfFailure(new CommandLineArguments(arguments));
     }
 
 
-    private class SampleServerPlugin implements ApplicationPlugin {
-        SampleServerPlugin(BroadcastServerPlugin broadcast) {
+    public static class SampleServerPlugin implements ApplicationPlugin {
+        public SampleServerPlugin(BroadcastServerPlugin broadcast) {
             broadcast.getConfiguration().addServerPreference(new BookPreferences());
         }
 

@@ -8,6 +8,7 @@
             <sql/>
             <bean/>
             <castor/>
+            <doc-structure/>
             <handler-update id="updateBook"/>
             <handler-select id="selectAllBook" type="All"/>
             <handler-select id="selectBookById" type="By_Primary-Key"/>
@@ -30,9 +31,9 @@
                 <description>Auteur</description>
                 <sql type="varchar" precision="150" required="true"/>
             </field>
-            <field name="publicationYear" type="java.lang.Integer">
+            <field name="publicationYear" type="java.sql.Timestamp">
                 <description>Année de publication</description>
-                <sql type="integer"/>
+                <sql type="timestamp"/>
             </field>
         </properties>
     </entity>

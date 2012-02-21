@@ -3,17 +3,19 @@ import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Types;
 import net.codjo.broadcast.common.Context;
 import net.codjo.broadcast.common.PostBroadcaster;
 import net.codjo.broadcast.common.Preferences;
 import net.codjo.broadcast.common.Selector;
 import net.codjo.broadcast.common.computed.ComputedField;
+import net.codjo.broadcast.common.computed.ConstantField;
 import net.codjo.broadcast.server.selector.AbstractGenericSelector;
 /**
  *
  */
 public class BookPreferences extends Preferences {
-    public static final String FAMILY = "BOOK";
+    public static final String FAMILY = "BOOKS";
 
 
     public BookPreferences() {
@@ -30,13 +32,17 @@ public class BookPreferences extends Preferences {
 
     @Override
     protected ComputedField[] initComputedFields() {
-        return new ComputedField[0];  // Todo
+        return new ComputedField[]{new ConstantField("CTE_STRING", Types.VARCHAR, "CTE_STRING VARCHAR(1)", null)};
     }
 
 
     @Override
     protected void initJoinKeys() {
-        // Todo
+        addJoinKeys(RIGHT_JOIN, "AP_BOOK", getSelectionTableName(),
+                            new String[][]{
+                                  {"TITLE", "TITLE", "="},
+                                  {"AUTHOR", "AUTHOR", "="}
+                            });
     }
 
 
@@ -64,7 +70,7 @@ public class BookPreferences extends Preferences {
                                              Date broadcastDate,
                                              int selectorId) throws SQLException {
             createSelectionTable(connection, selectionTableName);
-            executeUpdate(connection, loadQuery("ZeStaticSelector", context));
+            executeUpdate(connection, "select TITLE, AUTHOR, getDate() from AP_BOOK");
         }
 
 

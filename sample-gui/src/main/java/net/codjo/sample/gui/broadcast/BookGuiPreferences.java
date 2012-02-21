@@ -8,13 +8,13 @@ import net.codjo.mad.common.structure.StructureReader;
 public class BookGuiPreferences extends AbstractSelectorGuiPreference {
 
     public BookGuiPreferences(StructureReader structures) {
-        super("BOOK", "#COMPUTED_TAB", structures);
+        super("BOOKS", "#COMPUTED_TAB", structures);
     }
 
 
     @Override
     protected String getSelectorColumnsDescription() {
-        return "ZE_CODE, ZE_LABEL, BROADCAST_DATE";
+        return "TITLE, AUTHOR, BROADCAST_DATE";
     }
 
 
@@ -27,6 +27,12 @@ public class BookGuiPreferences extends AbstractSelectorGuiPreference {
     @Override
     protected GuiField[] getComputedFields(String aComputedTableName) {
         return new GuiField[0];
+    }
+
+
+    @Override
+    protected void initJoinKeys() {
+        addJoinKey("AP_BOOK");
     }
 }
 

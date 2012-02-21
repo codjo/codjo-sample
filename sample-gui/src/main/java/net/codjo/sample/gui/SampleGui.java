@@ -15,6 +15,7 @@ import net.codjo.mad.gui.base.GuiConfiguration;
 import net.codjo.mad.gui.base.MadGuiCore;
 import net.codjo.mad.gui.plugin.MadGuiPlugin;
 import net.codjo.mad.gui.util.ApplicationData;
+import net.codjo.sample.gui.broadcast.BookGuiPreferences;
 import net.codjo.security.client.plugin.SecurityClientPlugin;
 import net.codjo.security.gui.plugin.SecurityGuiPlugin;
 import net.codjo.workflow.gui.plugin.WorkflowAuditGuiPlugin;
@@ -55,6 +56,7 @@ public class SampleGui {
 
         public SampleGuiPlugin(BroadcastGuiPlugin broadcastGuiPlugin) {
             broadcastGuiPlugin.getConfiguration().installGenericSelector();
+            broadcastGuiPlugin.getConfiguration().addGuiPreference(BookGuiPreferences.class);
         }
 
 

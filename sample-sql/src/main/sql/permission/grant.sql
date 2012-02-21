@@ -13,6 +13,8 @@ grant select, insert, delete, update, references on PM_BROADCAST_SELECTOR       
 grant select, insert, delete, update, references on PM_FIELD_IMPORT_SETTINGS        to Utilisateur, Maintenance
 grant select, insert, delete, update, references on PM_IMPORT_SETTINGS              to Utilisateur, Maintenance
 grant select, insert, delete, update, references on PM_SOURCE_SYSTEM                to Utilisateur, Maintenance
+
+grant select, insert, delete, update, references on AP_BOOK                         to Utilisateur, Maintenance
 go
 
 /**************************/
@@ -38,6 +40,8 @@ grant select, references on PM_BROADCAST_SELECTOR           to Consultation
 grant select, references on PM_FIELD_IMPORT_SETTINGS        to Consultation
 grant select, references on PM_IMPORT_SETTINGS              to Consultation
 grant select, references on PM_SOURCE_SYSTEM                to Consultation
+
+grant select, references on AP_BOOK                         to Consultation
 go
 
 Print "Fin Création des autorisations"
