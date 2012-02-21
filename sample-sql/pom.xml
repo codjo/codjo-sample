@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!-- POM's layout - http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+     | POM Relationships
+     -->
+
+    <artifactId>sample-sql</artifactId>
+    <parent>
+        <groupId>net.codjo.sample</groupId>
+        <artifactId>sample</artifactId>
+        <version>1.0-0-SNAPSHOT</version>
+    </parent>
+    <dependencies>
+    </dependencies>
+
+    <!--
+    | Project Information
+    -->
+
+    <name>sample &gt; module sql</name>
+
+    <!--
+    | Build Settings
+    -->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.codjo.maven.mojo</groupId>
+                <artifactId>maven-database-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>
+                            <groupId>net.codjo.sample</groupId>
+                            <artifactId>sample-datagen</artifactId>
+                            <classifier>sql</classifier>
+                        </include>
+                    </includes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.codjo.maven.mojo</groupId>
+                <artifactId>maven-delivery-plugin</artifactId>
+                <configuration>
+                    <descriptorId>sql</descriptorId>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

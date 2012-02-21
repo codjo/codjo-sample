@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  Description des IHM de quarantaine par défaut.
+-->
+<quarantines>
+    <!--
+        QUARANTAINE DES EMETTEURS
+    -->
+    <gui name="Emetteur" tooltip="Quarantaine des émetteurs">
+        <quarantine>Q_AP_ISSUER</quarantine>
+        <quser>Q_AP_USER_ISSUER</quser>
+        <icon>red.quarantine.issuer</icon>
+        <window title="Quarantaine émetteur">
+            <preference>QUserIssuerWindow</preference>
+            <dbFilter>errorType</dbFilter>
+            <dbFilter>sourceFile</dbFilter>
+            <dbFilter>creationDatetime</dbFilter>
+        </window>
+        <detail title="Emetteur en quarantaine">
+            <!-- AP_ISSUER FIELDS -->
+            <field>issuerCode</field>
+            <field>referenceIssuerCode</field>
+            <field>issuerName</field>
+            <field>bloombergIssuerName</field>
+            <field>issuerId1</field>
+            <field>issuerId2</field>
+            <field>bloombergIssuerId</field>
+            <field>issuerCountry</field>
+            <field>countryOfRisk</field>
+            <!--<field>ultParentCountryOfRisk</field>-->
+            <field>issuerCurrencyCode</field>
+            <field>issuerType</field>
+            <field>spvFlag</field>
+            <!-- AP_ISSUER_RATINGS FIELDS -->
+            <field>ltSpRating</field>
+            <field>ltMoodyRating</field>
+            <field>ltFitchRating</field>
+            <field>stSpRating</field>
+            <field>stMoodyRating</field>
+            <field>stFitchRating</field>
+            <field>spOutlook</field>
+            <field>moodyOutlook</field>
+            <field>fitchOutlook</field>
+            <!-- AP_ISSUER_SECTOR FIELDS -->
+            <field>sbf250ShareSubsectorCode</field>
+            <field>icbShareSubsectCode</field>
+            <field>msciShareSubsectorCode</field>
+            <field>lhmBrtRateSubsectorCode</field>
+            <field>idBbCompany</field>
+            <!-- Quarantine -->
+            <field>errorLog</field>
+            <field>errorType</field>
+            <field>sourceSystem</field>
+            <field>sourceFile</field>
+            <field>creationDatetime</field>
+        </detail>
+    </gui>
+</quarantines>

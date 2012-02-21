@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<toolbar borderPainted="false" floatable="true" iconOnly="true">
+    <component action="net.codjo.mad.gui.base.QuitAction"/>
+    <component separator="true"/>
+</toolbar>

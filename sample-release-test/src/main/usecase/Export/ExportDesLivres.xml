@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<release-test name="ExportDesLivres"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="http://test-release.xsd"
+              enabled="false">
+
+    <description>Test d'export des livres</description>
+
+    <security-model user="${testEnvironment.user}" roles="utilisateur"/>
+
+    <tokio-load id="db.load" file="ExportDesLivres.tokio"/>
+    <tokio-set-db id="db.setdb" refId="db.load" scenario="Export"/>
+
+    <batch-export initiator="sample" file="Livres.txt" date="2003-11-27"/>
+
+    <file-assert expected="Livres_etalon.txt" actual="Livres.txt"/>
+
+</release-test>

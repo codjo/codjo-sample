@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="IntegrationPlan.xsl"?>
+<integration-plan id="ap_issuer_integration_plan" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:noNamespaceSchemaLocation="http://IntegrationPlan.xsd">
+    <description>Plan d'intégration vide.</description>
+</integration-plan>

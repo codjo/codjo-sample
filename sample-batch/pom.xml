@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!-- POM's layout - http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+     | POM Relationships
+     -->
+
+    <artifactId>sample-batch</artifactId>
+    <parent>
+        <groupId>net.codjo.sample</groupId>
+        <artifactId>sample</artifactId>
+        <version>1.0-0-SNAPSHOT</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>net.codjo.security</groupId>
+            <artifactId>codjo-security-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.mad</groupId>
+            <artifactId>codjo-mad-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.broadcast</groupId>
+            <artifactId>codjo-broadcast-batch</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.imports</groupId>
+            <artifactId>codjo-imports-batch</artifactId>
+        </dependency>
+    </dependencies>
+    
+    <!--
+    | Project Information
+    -->
+
+    <name>sample &gt; module batch</name>
+
+    <!--
+    | Build Settings
+    -->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.codjo.maven.mojo</groupId>
+                <artifactId>maven-delivery-plugin</artifactId>
+                <configuration>
+                    <descriptorId>batch</descriptorId>
+                    <includes>
+                        <include>
+                            <groupId>net.codjo.plugin</groupId>
+                            <artifactId>codjo-plugin-batch</artifactId>
+                            <classifier>import</classifier>
+                            <type>ksh</type>
+                            <output>import.ksh</output>
+                        </include>
+                        <include>
+                            <groupId>net.codjo.plugin</groupId>
+                            <artifactId>codjo-plugin-batch</artifactId>
+                            <classifier>export</classifier>
+                            <type>ksh</type>
+                            <output>export.ksh</output>
+                        </include>
+                    </includes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<menubar>
+    <menu>
+        <name>Fichier</name>
+        <menu action="net.codjo.mad.gui.base.QuitAction"/>
+    </menu>
+    <menu gui_contexte_property="Menu Edition"/>
+    <menu>
+        <name>Interfaces</name>
+        <menu>
+            <name>Paramètres</name>
+            <menu plugin="net.codjo.imports.gui.plugin.ImportGuiPlugin" actionId="ImportAction"/>
+            <menu action="net.codjo.control.gui.system.SourceSystemAction"/>
+            <menu>
+                <name>Export</name>
+                <menu plugin="net.codjo.broadcast.gui.plugin.BroadcastGuiPlugin" actionId="BroadcastSelectorsAction"/>
+                <menu plugin="net.codjo.broadcast.gui.plugin.BroadcastGuiPlugin" actionId="BroadcastFilesAction"/>
+                <menu plugin="net.codjo.broadcast.gui.plugin.BroadcastGuiPlugin" actionId="BroadcastSectionsAction"/>
+            </menu>
+        </menu>
+        <menu separator="true"/>
+        <menu plugin="net.codjo.imports.gui.plugin.ImportGuiPlugin" actionId="ImportWizard"/>
+        <menu plugin="net.codjo.broadcast.gui.plugin.BroadcastGuiPlugin" actionId="BroadcastWizard"/>
+        <menu separator="true"/>
+        <menu plugin="net.codjo.workflow.gui.plugin.WorkflowAuditGuiPlugin" actionId="WorkflowLogAction"/>
+    </menu>
+    <menu>
+        <name>Administration</name>
+        <menu plugin="net.codjo.security.gui.plugin.SecurityGuiPlugin" actionId="UserForm"/>
+    </menu>
+    <menu gui_contexte_property="Menu Fenetre"/>
+    <menu>
+        <name>Aide</name>
+        <menu action="net.codjo.mad.gui.base.AboutWindowAction"/>
+        <menu>
+            <name>Debug</name>
+            <menu plugin="net.codjo.workflow.gui.plugin.WorkflowGuiPlugin" actionId="ConsoleAction"/>
+        </menu>
+    </menu>
+</menubar>

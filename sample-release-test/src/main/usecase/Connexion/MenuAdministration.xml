@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<release-test name="MenuAdministration"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="http://test-release.xsd">
+
+    <description>Test de droits du menu Administration</description>
+
+    <security-model user="${testEnvironment.user}" roles="utilisateur"/>
+    <gui-test>
+        <group name="Grisage du menu pour les utilisateurs standards (rôle RED_group)">
+            <assertEnabled menu="Administration" expected="false"/>
+            <assertEnabled menu="Administration:Administration utilisateur" expected="false"/>
+        </group>
+    </gui-test>
+
+    <security-model user="${testEnvironment.user}" roles="administrateur"/>
+    <gui-test>
+        <group name="Activation du menu pour les utilisateurs Admin (rôle RED_adminGroup)">
+            <assertEnabled menu="Administration" expected="true"/>
+
+            <assertEnabled menu="Administration:Administration utilisateur" expected="true"/>
+            <click menu="Administration:Administration utilisateur"/>
+            <assertFrame title="Administration des utilisateurs"/>
+            <closeFrame title="Administration des utilisateurs"/>
+        </group>
+    </gui-test>
+</release-test>

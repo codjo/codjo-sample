@@ -1,0 +1,10 @@
+<model>
+    <grants>
+        <entry>
+            <user name="${defaultUser}"/>
+            <list>
+                <role name="utilisateur"/>
+            </list>
+        </entry>
+    </grants>
+</model>

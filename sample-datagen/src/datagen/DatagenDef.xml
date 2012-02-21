@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="http://datagen.xsd">
+    <roles>
+        <role id="utilisateur">
+            <include>*</include>
+
+            <include>com.agf.broadcast.gui.plugin.BroadcastGuiPlugin#BroadcastSelectorsAction</include>
+            <include>(new|delete|update)BroadcastSelector</include>
+            <include>com.agf.broadcast.gui.selector.DeleteSelectorAction</include>
+
+            <exclude>administrate-user</exclude>
+        </role>
+        <role id="administrateur">
+            <include>*</include>
+        </role>
+    </roles>
+
+    <include name="@basedir@/src/datagen/TableDataDef.xml"/>
+</data>

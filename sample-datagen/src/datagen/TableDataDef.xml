@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://datagen.xsd">
+    <entity name="net.codjo.sample.Book" table="AP_BOOK">
+        <description>Une table contenant des livres</description>
+
+        <feature>
+            <sql/>
+            <bean/>
+            <castor/>
+            <handler-update id="updateBook"/>
+            <handler-select id="selectAllBook" type="All"/>
+            <handler-select id="selectBookById" type="By_Primary-Key"/>
+            <sql-index>
+                <idx type="primary-key" name-prefix="X1_" clustered="false"/>
+            </sql-index>
+        </feature>
+
+        <primary-key>
+            <field name="title"/>
+            <field name="author"/>
+        </primary-key>
+
+        <properties>
+            <field name="title" type="string">
+                <description>Titre du livre</description>
+                <sql type="varchar" precision="255" required="true"/>
+            </field>
+            <field name="author" type="string">
+                <description>Auteur</description>
+                <sql type="varchar" precision="150" required="true"/>
+            </field>
+            <field name="publicationYear" type="java.lang.Integer">
+                <description>Année de publication</description>
+                <sql type="integer"/>
+            </field>
+        </properties>
+    </entity>
+</entities>

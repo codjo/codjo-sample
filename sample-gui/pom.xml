@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!-- POM's layout - http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+     | POM Relationships
+     -->
+
+    <artifactId>sample-gui</artifactId>
+    <parent>
+        <groupId>net.codjo.sample</groupId>
+        <artifactId>sample</artifactId>
+        <version>1.0-0-SNAPSHOT</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>net.codjo.sample</groupId>
+            <artifactId>sample-datagen</artifactId>
+            <classifier>client</classifier>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.security</groupId>
+            <artifactId>codjo-security-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.mad</groupId>
+            <artifactId>codjo-mad-gui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.mad</groupId>
+            <artifactId>codjo-mad-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.imports</groupId>
+            <artifactId>codjo-imports-gui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.imports</groupId>
+            <artifactId>codjo-imports-plugin-filter-gui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.control</groupId>
+            <artifactId>codjo-control-gui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.broadcast</groupId>
+            <artifactId>codjo-broadcast-gui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.security</groupId>
+            <artifactId>codjo-security-gui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.plugin</groupId>
+            <artifactId>codjo-plugin-gui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.workflow</groupId>
+            <artifactId>codjo-workflow-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.workflow</groupId>
+            <artifactId>codjo-workflow-gui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.intellij</groupId>
+            <artifactId>forms_rt</artifactId>
+        </dependency>
+    </dependencies>
+
+    <!--
+    | Project Information
+    -->
+
+    <name>sample &gt; module gui</name>
+
+    <!--
+    | Build Settings
+    -->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>ideauidesigner-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.bud.maven.mojo</groupId>
+                <artifactId>maven-simplewebstart-plugin</artifactId>
+                <configuration>
+                    <jnlp>
+                        <mainClass>${clientMainClass}</mainClass>
+                        <permission>all</permission>
+                        <properties>
+                            <!-- Properties du super-pom -->
+                            <property>
+                                <name>server.default.url</name>
+                                <value>server.url.@environmentType@</value>
+                            </property>
+                            <property>
+                                <name>server.url.production</name>
+                                <value>Production,@serverHost@:@serverPort@</value>
+                            </property>
+                            <property>
+                                <name>server.url.recette</name>
+                                <value>Recette,@serverHost@:@serverPort@</value>
+                            </property>
+                            <property>
+                                <name>imports.vtom</name>
+                                <value>@clientImportsVtomBatch@</value>
+                            </property>
+                            <property>
+                                <name>imports.inbox</name>
+                                <value>@clientImportsInbox@</value>
+                            </property>
+                            <property>
+                                <name>broadcast.vtom</name>
+                                <value>@clientBroadcastVtomBatch@</value>
+                            </property>
+
+                        </properties>
+                    </jnlp>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.codjo.maven.mojo</groupId>
+                <artifactId>maven-delivery-plugin</artifactId>
+                <configuration>
+                    <descriptorId>client</descriptorId>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

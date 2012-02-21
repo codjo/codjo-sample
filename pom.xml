@@ -1,0 +1,137 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!-- POM's layout - http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+     | POM Relationships
+     -->
+
+    <groupId>net.codjo.sample</groupId>
+    <artifactId>sample</artifactId>
+    <version>1.0-0-SNAPSHOT</version>
+    <!-- START SNIPPET: super-pom -->
+    <parent>
+        <groupId>net.codjo.pom</groupId>
+        <artifactId>codjo-pom-application</artifactId>
+        <version>SNAPSHOT</version>
+    </parent>
+    <!-- END SNIPPET: super-pom -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>net.codjo.sample</groupId>
+                <artifactId>sample-batch</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.codjo.sample</groupId>
+                <artifactId>sample-batch</artifactId>
+                <version>${project.version}</version>
+                <classifier>assembly</classifier>
+            </dependency>
+            <dependency>
+                <groupId>net.codjo.sample</groupId>
+                <artifactId>sample-gui</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.codjo.sample</groupId>
+                <artifactId>sample-server</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.codjo.sample</groupId>
+                <artifactId>sample-server</artifactId>
+                <version>${project.version}</version>
+                <classifier>assembly</classifier>
+            </dependency>
+            <dependency>
+                <groupId>net.codjo.sample</groupId>
+                <artifactId>sample-datagen</artifactId>
+                <version>${project.version}</version>
+                <classifier>client</classifier>
+            </dependency>
+            <dependency>
+                <groupId>net.codjo.sample</groupId>
+                <artifactId>sample-datagen</artifactId>
+                <version>${project.version}</version>
+                <classifier>server</classifier>
+                <!--  <scope>compile</scope>  -->
+            </dependency>
+            <dependency>
+                <groupId>net.codjo.sample</groupId>
+                <artifactId>sample-datagen</artifactId>
+                <version>${project.version}</version>
+                <classifier>sql</classifier>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--
+    | Project Information
+    -->
+
+    <name>sample</name>
+    <description>Exemple d'application batie sur le framework codjo.</description>
+
+    <!--
+    | Build Settings
+    -->
+
+    <packaging>pom</packaging>
+    <modules>
+        <module>sample-datagen</module>
+        <module>sample-sql</module>
+        <module>sample-server</module>
+        <module>sample-gui</module>
+        <module>sample-batch</module>
+        <module>sample-release-test</module>
+    </modules>
+    <properties>
+        <serverPort>35700</serverPort>
+        <serverHostDev>localhost</serverHostDev>
+        <databaseApplicationUser>${defaultDatabaseApplicationUser}</databaseApplicationUser>
+        <databaseApplicationPassword>${defaultDatabaseApplicationPassword}</databaseApplicationPassword>
+
+        <!--
+                   Les variables serverMainClass et batchMainClass sont utilises dans les scripts unix
+                   et par le plugin test-release
+        -->
+        <serverMainClass>net.codjo.sample.server.SampleServer</serverMainClass>
+        <clientMainClass>net.codjo.sample.gui.SampleGui</clientMainClass>
+        <batchMainClass>net.codjo.sample.batch.SampleBatch</batchMainClass>
+
+        <!--<versionInProduction>???</versionInProduction>-->
+    </properties>
+
+    <!--
+    | Maven Environment
+    -->
+
+    <profiles>
+        <profile>
+            <id>server-developer</id>
+            <activation>
+                <property>
+                    <name>!server</name>
+                </property>
+            </activation>
+            <properties>
+                <serverHost>${serverHostDev}</serverHost>
+            </properties>
+        </profile>
+    </profiles>
+
+    <!--
+     | Environment Information
+     -->
+
+    <scm>
+        <connection>scm:git:https://github.com/galaber/codjo-sample.git</connection>
+        <developerConnection>scm:git:https://github.com/galaber/codjo-sample.git</developerConnection>
+        <url>https://github.com/galaber/codjo-sample</url>
+    </scm>
+
+</project>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<application-controls name="SAMPLE">
+    <integration-definition>
+        <plan>/emptyPlan.xml</plan>
+        <transfert quarantine="Q_AP_ISSUER" user="Q_AP_USER_ISSUER"/>
+    </integration-definition>
+</application-controls>

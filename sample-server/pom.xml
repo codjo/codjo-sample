@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!-- POM's layout - http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+     | POM Relationships
+     -->
+
+    <artifactId>sample-server</artifactId>
+    <parent>
+        <groupId>net.codjo.sample</groupId>
+        <artifactId>sample</artifactId>
+        <version>1.0-0-SNAPSHOT</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>net.codjo.sample</groupId>
+            <artifactId>sample-datagen</artifactId>
+            <classifier>server</classifier>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.plugin</groupId>
+            <artifactId>codjo-plugin-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.plugin</groupId>
+            <artifactId>codjo-plugin-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.workflow</groupId>
+            <artifactId>codjo-workflow-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.sql</groupId>
+            <artifactId>codjo-sql-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.mad</groupId>
+            <artifactId>codjo-mad-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.imports</groupId>
+            <artifactId>codjo-imports-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.imports</groupId>
+            <artifactId>codjo-imports-plugin-filter-kernel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.control</groupId>
+            <artifactId>codjo-control-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.broadcast</groupId>
+            <artifactId>codjo-broadcast-server</artifactId>
+        </dependency>
+    </dependencies>
+
+    <!--
+    | Project Information
+    -->
+
+    <name>sample &gt; module serveur</name>
+
+    <!--
+    | Build Settings
+    -->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.codjo.maven.mojo</groupId>
+                <artifactId>maven-config-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>net.codjo.maven.mojo</groupId>
+                <artifactId>maven-delivery-plugin</artifactId>
+                <configuration>
+                    <descriptorId>server</descriptorId>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

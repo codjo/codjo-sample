@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!-- POM's layout - http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html -->
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+     | POM Relationships
+     -->
+
+    <artifactId>sample-release-test</artifactId>
+    <parent>
+        <groupId>net.codjo.sample</groupId>
+        <artifactId>sample</artifactId>
+        <version>1.0-0-SNAPSHOT</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>net.codjo.sample</groupId>
+            <artifactId>sample-batch</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.sample</groupId>
+            <artifactId>sample-gui</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.sample</groupId>
+            <artifactId>sample-server</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.release-test</groupId>
+            <artifactId>codjo-release-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.broadcast</groupId>
+            <artifactId>codjo-broadcast-release-test</artifactId>
+            <classifier>tests</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.control</groupId>
+            <artifactId>codjo-control-gui</artifactId>
+            <classifier>tests</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.mad</groupId>
+            <artifactId>codjo-mad-client</artifactId>
+            <classifier>tests</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.gui-toolkit</groupId>
+            <artifactId>codjo-gui-toolkit</artifactId>
+            <classifier>tests</classifier>
+        </dependency>
+    </dependencies>
+
+    <!--
+    | Project Information
+    -->
+
+    <name>sample &gt; tests release</name>
+
+    <!--
+    | Build Settings
+    -->
+
+    <packaging>pom</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.codjo.maven.mojo</groupId>
+                <artifactId>maven-config-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>net.codjo.maven.mojo</groupId>
+                <artifactId>maven-test-release-plugin</artifactId>
+                <configuration>
+                    <serverMainClass>${serverMainClass}</serverMainClass>
+                    <server>
+                        <groupId>net.codjo.sample</groupId>
+                        <artifactId>sample-server</artifactId>
+                        <classifier>assembly</classifier>
+                    </server>
+                    <batch>
+                        <groupId>net.codjo.sample</groupId>
+                        <artifactId>sample-batch</artifactId>
+                        <classifier>assembly</classifier>
+                    </batch>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

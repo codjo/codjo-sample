@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<idea>
+    <execConfiguration>
+        <name>Client</name>
+        <description>Lance le client</description>
+        <execClass>${clientMainClass}</execClass>
+        <vmParameter>-Dlog4j.configuration="file:${user.home}/log4j.properties"</vmParameter>
+        <workdir>${basedir}/sample-gui</workdir>
+        <module>sample-gui</module>
+    </execConfiguration>
+
+    <execConfiguration>
+        <name>Client (AutoLogin)</name>
+        <description>Lance le client en login automatique</description>
+        <execClass>${clientMainClass}</execClass>
+        <vmParameter>-Dlog4j.configuration="file:${user.home}/log4j.properties"</vmParameter>
+        <parameter>${defaultUser} ${defaultUserPassword} ${serverHost} ${serverPort}</parameter>
+        <workdir>${basedir}/sample-gui</workdir>
+        <module>sample-gui</module>
+    </execConfiguration>
+
+    <execConfiguration>
+        <name>Event Recorder</name>
+        <description>Lance l'event recorder</description>
+        <execClass>recorder.gui.Starter</execClass>
+        <vmParameter>-Dlog4j.configuration="file:${user.home}/log4j.properties"</vmParameter>
+        <parameter>${clientMainClass} main ${defaultUser} ${defaultUserPassword} ${serverHost} ${serverPort}</parameter>
+        <workdir>${basedir}/sample-gui</workdir>
+        <module>sample-gui</module>
+    </execConfiguration>
+
+    <execConfiguration>
+        <name>Serveur</name>
+        <description>Lance le serveur</description>
+        <execClass>${serverMainClass}</execClass>
+        <vmParameter>-Dlog4j.configuration="file:${user.home}/log4j.properties"</vmParameter>
+        <parameter>-configuration ${basedir}/sample-server/target/config/server-config.properties</parameter>
+        <workdir>${basedir}/sample-server</workdir>
+        <module>sample-server</module>
+    </execConfiguration>
+</idea>
