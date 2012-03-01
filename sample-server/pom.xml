@@ -56,6 +56,18 @@
             <groupId>net.codjo.broadcast</groupId>
             <artifactId>codjo-broadcast-server</artifactId>
         </dependency>
+        <dependency>
+            <groupId>net.codjo.database</groupId>
+            <artifactId>codjo-database-${databaseType}</artifactId>
+            <optional>true</optional>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.database</groupId>
+            <artifactId>codjo-database-${databaseType}-api</artifactId>
+            <optional>true</optional>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <!--
