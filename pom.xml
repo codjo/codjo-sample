@@ -23,47 +23,47 @@
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-batch</artifactId>
-                <version>${project.version}</version>
+                <version>1.0-0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-batch</artifactId>
-                <version>${project.version}</version>
+                <version>1.0-0-SNAPSHOT</version>
                 <classifier>assembly</classifier>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-gui</artifactId>
-                <version>${project.version}</version>
+                <version>1.0-0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-server</artifactId>
-                <version>${project.version}</version>
+                <version>1.0-0-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-server</artifactId>
-                <version>${project.version}</version>
+                <version>1.0-0-SNAPSHOT</version>
                 <classifier>assembly</classifier>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-datagen</artifactId>
-                <version>${project.version}</version>
+                <version>1.0-0-SNAPSHOT</version>
                 <classifier>client</classifier>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-datagen</artifactId>
-                <version>${project.version}</version>
+                <version>1.0-0-SNAPSHOT</version>
                 <classifier>server</classifier>
                 <!--  <scope>compile</scope>  -->
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-datagen</artifactId>
-                <version>${project.version}</version>
+                <version>1.0-0-SNAPSHOT</version>
                 <classifier>sql</classifier>
             </dependency>
         </dependencies>
@@ -93,8 +93,7 @@
         <serverPort>35700</serverPort>
         <serverHostDev>localhost</serverHostDev>
         <databaseApplicationUser>${defaultDatabaseApplicationUser}</databaseApplicationUser>
-        <databaseApplicationPassword>${defaultDatabaseApplicationPassword}</databaseApplicationPassword>
-
+        <databaseApplicationPassword>${defaultDatabaseApplicationUser}</databaseApplicationPassword>
         <!--
                    Les variables serverMainClass et batchMainClass sont utilises dans les scripts unix
                    et par le plugin test-release
