@@ -55,7 +55,7 @@ public class BookPreferences extends Preferences {
 
 
     public static class BookSelector extends AbstractGenericSelector {
-        private static final String BASE_INSERT_QUERY = "insert into $selectionTable$ (TITLE, AUTHOR, BROADCAST_DATE)";
+        private static final String BASE_INSERT_QUERY = "insert into $selectionTable$ (TITLE, AUTHOR) ";
 
 
         public BookSelector(int selectorId) {
@@ -70,7 +70,8 @@ public class BookPreferences extends Preferences {
                                              Date broadcastDate,
                                              int selectorId) throws SQLException {
             createSelectionTable(connection, selectionTableName);
-            executeUpdate(connection, "select TITLE, AUTHOR, getDate() from AP_BOOK");
+            String selectorQuery = BASE_INSERT_QUERY + " select TITLE, AUTHOR from AP_BOOK";
+            executeQueryWithVariables(context, connection, selectorQuery);
         }
 
 
@@ -89,8 +90,7 @@ public class BookPreferences extends Preferences {
         private void createSelectionTable(Connection connection, String tableName) throws SQLException {
             createTempTable(connection, tableName,
                             " TITLE      varchar(255)  not null,"
-                            + " AUTHOR      varchar(150)  not null,"
-                            + " BROADCAST_DATE timestamp null, ");
+                            + " AUTHOR      varchar(150)  not null ");
         }
     }
 }

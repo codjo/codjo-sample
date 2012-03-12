@@ -31,7 +31,7 @@
                 <description>Auteur</description>
                 <sql type="varchar" precision="150" required="true"/>
             </field>
-            <field name="publicationYear" type="java.sql.Timestamp">
+            <field name="publicationYear" type="java.sql.Date">
                 <description>Année de publication</description>
                 <sql type="timestamp"/>
             </field>

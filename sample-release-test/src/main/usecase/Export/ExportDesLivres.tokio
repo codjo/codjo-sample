@@ -24,17 +24,15 @@
 
         <PM_BROADCAST_SECTION>
             <row>
-                <FIXED_LENGTH value="true"/>
                 <SECTION_NAME value="James Elroy"/>
                 <FAMILY value="BOOKS"/>
-                <SELECTION_ID value="0"/>
+                <SELECTION_ID value="1"/>
                 <SECTION_ID value="1"/>
             </row>
             <row>
-                <FIXED_LENGTH value="true"/>
                 <SECTION_NAME value="Ken Follett"/>
                 <FAMILY value="BOOKS"/>
-                <SELECTION_ID value="0"/>
+                <SELECTION_ID value="1"/>
                 <SECTION_ID value="2"/>
             </row>
         </PM_BROADCAST_SECTION>
@@ -42,18 +40,20 @@
             <row>
                 <SECTION_HEADER value="false"/>
                 <FILE_ID value="1"/>
-                <COLUMN_HEADER value="false"/>
+                <COLUMN_HEADER value="true"/>
                 <SECTION_POSITION value="1"/>
                 <CONTENT_ID value="1"/>
                 <SECTION_ID value="1"/>
+                <COLUMN_SEPARATOR value=";"/>
             </row>
             <row>
                 <SECTION_HEADER value="false"/>
                 <FILE_ID value="1"/>
                 <COLUMN_HEADER value="false"/>
-                <SECTION_POSITION value="1"/>
+                <SECTION_POSITION value="2"/>
                 <CONTENT_ID value="2"/>
                 <SECTION_ID value="2"/>
+                <COLUMN_SEPARATOR value=";"/>
             </row>
         </PM_BROADCAST_FILE_CONTENTS>
         <PM_BROADCAST_COLUMNS>
@@ -62,7 +62,6 @@
                 <PADDING_CARACTER value=""/>
                 <DB_FIELD_NAME value="TITLE"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
-                <COLUMN_LENGTH value="6"/>
                 <COLUMNS_ID value="1"/>
                 <COLUMN_NUMBER value="10"/>
                 <COLUMN_NAME value="Titre"/>
@@ -73,7 +72,6 @@
                 <PADDING_CARACTER value=""/>
                 <DB_FIELD_NAME value="AUTHOR"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
-                <COLUMN_LENGTH value="7"/>
                 <COLUMNS_ID value="2"/>
                 <COLUMN_NUMBER value="20"/>
                 <COLUMN_NAME value="Auteur"/>
@@ -85,10 +83,9 @@
                 <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
                 <COLUMN_DATE_FORMAT value="yyyyMM"/>
-                <COLUMN_LENGTH value="30"/>
                 <COLUMNS_ID value="3"/>
                 <COLUMN_NUMBER value="30"/>
-                <COLUMN_NAME value="année de publication"/>
+                <COLUMN_NAME value="Année de publication"/>
                 <SECTION_ID value="1"/>
             </row>
             <row>
@@ -96,7 +93,6 @@
                 <PADDING_CARACTER value=""/>
                 <DB_FIELD_NAME value="TITLE"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
-                <COLUMN_LENGTH value="6"/>
                 <COLUMNS_ID value="4"/>
                 <COLUMN_NUMBER value="40"/>
                 <COLUMN_NAME value="Titre"/>
@@ -107,7 +103,6 @@
                 <PADDING_CARACTER value=""/>
                 <DB_FIELD_NAME value="AUTHOR"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
-                <COLUMN_LENGTH value="7"/>
                 <COLUMNS_ID value="5"/>
                 <COLUMN_NUMBER value="50"/>
                 <COLUMN_NAME value="Auteur"/>
@@ -119,12 +114,24 @@
                 <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
                 <COLUMN_DATE_FORMAT value="yyyyMM"/>
-                <COLUMN_LENGTH value="30"/>
                 <COLUMNS_ID value="6"/>
                 <COLUMN_NUMBER value="60"/>
                 <COLUMN_NAME value="année de publication"/>
                 <SECTION_ID value="2"/>
             </row>
         </PM_BROADCAST_COLUMNS>
+
+        <AP_BOOK>
+            <row>
+                <TITLE value="Le Dahlia noir"/>
+                <AUTHOR value="James Ellroy"/>
+                <PUBLICATION_YEAR value="1987-01-01"/>
+            </row>
+            <row>
+                <TITLE value="Les piliers de la Terre"/>
+                <AUTHOR value="Ken Follett"/>
+                <PUBLICATION_YEAR value="1990-01-01"/>
+            </row>
+        </AP_BOOK>
     </input>
 </story>
