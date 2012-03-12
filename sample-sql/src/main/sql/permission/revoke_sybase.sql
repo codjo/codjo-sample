@@ -1,0 +1,26 @@
+Print "Début de suppression des autorisations"
+
+/**************************/
+/*  Droits sur les tables */
+/**************************/
+revoke all on PM_SEC_MODEL                          to Utilisateur, Maintenance, Consultation
+revoke all on AP_WORKFLOW_LOG                       to Utilisateur, Maintenance, Consultation
+revoke all on PM_BROADCAST_COLUMNS                  to Utilisateur, Maintenance, Consultation
+revoke all on PM_BROADCAST_FILE_CONTENTS            to Utilisateur, Maintenance, Consultation
+revoke all on PM_BROADCAST_FILES                    to Utilisateur, Maintenance, Consultation
+revoke all on PM_BROADCAST_SECTION                  to Utilisateur, Maintenance, Consultation
+revoke all on PM_BROADCAST_SELECTOR                 to Utilisateur, Maintenance, Consultation
+revoke all on PM_FIELD_IMPORT_SETTINGS              to Utilisateur, Maintenance, Consultation
+revoke all on PM_IMPORT_SETTINGS                    to Utilisateur, Maintenance, Consultation
+revoke all on PM_SOURCE_SYSTEM                      to Utilisateur, Maintenance, Consultation
+go
+/**************************/
+/*  Droits sur les vues  */
+/**************************/
+go
+
+/**************************/
+/*  Droits sur les procs  */
+/**************************/
+go
+Print "Fin de suppression des autorisations"

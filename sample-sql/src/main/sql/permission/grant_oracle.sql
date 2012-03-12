@@ -51,7 +51,61 @@ grant select, references on PM_SOURCE_SYSTEM                to Consultation
 grant select, references on AP_BOOK                         to Consultation
 go
 
+-----------------------------------
+QUERY pour connexion APP_USER
+-----------------------------------
+    SELECT grantor, table_name, privilege
+    FROM user_tab_privs_recd;
 
+
+-----------------------------------
+QUERY pour connexion DEVDB6_dbo
+-----------------------------------
+
+SELECT grantee, table_name, privilege
+FROM user_tab_privs_made;
+
+select name from system_privilege_map
+
+select
+      grantee,
+      privilege
+    from
+      dba_sys_privs
+
+UTILISATEUR
+
+select
+      null     grantee,
+      username granted_role
+    from
+      dba_users
+    where
+      username = 'SMARTUSER1'
+
+select
+      grantee,
+      granted_role
+    from
+      dba_role_privs
+    where
+      grantee = 'SMARTUSER1'
+
+select
+      grantee,
+      granted_role
+    from
+      dba_role_privs
+    where
+      grantee = 'ROLE_UTILISATEUR_IDW'
+
+select
+      grantee,
+      privilege
+    from
+      dba_sys_privs
+where
+      grantee = 'ROLE_UTILISATEUR_IDW'
 
 */
 Prompt 'Fin Création des autorisations'
