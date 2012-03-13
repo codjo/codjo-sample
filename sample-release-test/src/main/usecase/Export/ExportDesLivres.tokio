@@ -121,6 +121,14 @@
             </row>
         </PM_BROADCAST_COLUMNS>
 
+        <REF_AUTHOR>
+            <row>
+                <AUTHOR value="James Ellroy"/>
+            </row>
+            <row>
+                <AUTHOR value="Ken Follett"/>
+            </row>
+        </REF_AUTHOR>
         <AP_BOOK>
             <row>
                 <TITLE value="Le Dahlia noir"/>

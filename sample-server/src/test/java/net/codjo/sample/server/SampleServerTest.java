@@ -15,6 +15,8 @@ public class SampleServerTest {
     @Test
     public void test_doStuffInBd() throws Exception {
         jdbc.delete(table("AP_BOOK"));
+        jdbc.delete(table("REF_AUTHOR"));
+        jdbc.executeUpdate("insert into REF_AUTHOR (AUTHOR, BIOGRAPHY) values ('my dear', '1522-1689')");
         jdbc.executeUpdate("insert into AP_BOOK (TITLE, AUTHOR) values ('database for you', 'my dear')");
     }
 

@@ -12,6 +12,7 @@
             <handler-update id="updateBook"/>
             <handler-select id="selectAllBook" type="All"/>
             <handler-select id="selectBookById" type="By_Primary-Key"/>
+            <sql-constraint/>
             <sql-index>
                 <idx type="primary-key" name-prefix="X1_" clustered="false"/>
             </sql-index>
@@ -21,6 +22,12 @@
             <field name="title"/>
             <field name="author"/>
         </primary-key>
+        
+        <foreign-keys>
+            <link id="FK_AUTH_BOOK" table="net.codjo.sample.Author">
+                <field from="author" to="author"/>
+            </link>
+        </foreign-keys>
 
         <properties>
             <field name="title" type="string">
@@ -34,6 +41,32 @@
             <field name="publicationYear" type="java.sql.Date">
                 <description>Année de publication</description>
                 <sql type="timestamp"/>
+            </field>
+        </properties>
+    </entity>
+
+    <entity name="net.codjo.sample.Author" table="REF_AUTHOR">
+        <description>Author Referential</description>
+
+        <feature>
+            <sql/>
+            <sql-index>
+                <idx type="primary-key" name-prefix="X1_" clustered="false"/>
+            </sql-index>
+        </feature>
+
+        <primary-key>
+            <field name="author"/>
+        </primary-key>
+
+        <properties>
+            <field name="author" type="string">
+                <description>Auteur</description>
+                <sql type="varchar" precision="150" required="true"/>
+            </field>
+            <field name="biography" type="string">
+                <description>Biography</description>
+                <sql type="varchar" precision="300"/>
             </field>
         </properties>
     </entity>
