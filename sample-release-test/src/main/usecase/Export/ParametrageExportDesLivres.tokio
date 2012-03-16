@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<story id="Export" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="file:C:/dev/platform/cache/xsd/sample-story.xsd">
+    <input>
+        <PM_SOURCE_SYSTEM>
+            <row>
+                <SOURCE_SYSTEM value="codjo"/>
+                <DATE_FORMAT value="yyyyMM"/>
+                <DECIMAL_SEPARATOR value="."/>
+            </row>
+        </PM_SOURCE_SYSTEM>
+        <PM_BROADCAST_FILES>
+            <row>
+                <FILE_NAME value="Livres.txt"/>
+                <DESTINATION_SYSTEM value="codjo"/>
+                <AUTO_DISTRIBUTION value="false"/>
+                <HISTORISE_FILE value="false"/>
+                <FILE_ID value="1"/>
+                <SECTION_SEPARATOR value="false"/>
+                <FILE_HEADER value="false"/>
+                <DISTRIBUTION_METHOD value="NONE"/>
+            </row>
+        </PM_BROADCAST_FILES>
+
+        <PM_BROADCAST_SECTION>
+            <row>
+                <SECTION_NAME value="James Elroy"/>
+                <FAMILY value="BOOKS"/>
+                <SELECTION_ID value="1"/>
+                <SECTION_ID value="1"/>
+            </row>
+            <row>
+                <SECTION_NAME value="Ken Follett"/>
+                <FAMILY value="BOOKS"/>
+                <SELECTION_ID value="1"/>
+                <SECTION_ID value="2"/>
+            </row>
+        </PM_BROADCAST_SECTION>
+        <PM_BROADCAST_FILE_CONTENTS>
+            <row>
+                <SECTION_HEADER value="false"/>
+                <FILE_ID value="1"/>
+                <COLUMN_HEADER value="true"/>
+                <SECTION_POSITION value="1"/>
+                <CONTENT_ID value="1"/>
+                <SECTION_ID value="1"/>
+                <COLUMN_SEPARATOR value=";"/>
+            </row>
+            <row>
+                <SECTION_HEADER value="false"/>
+                <FILE_ID value="1"/>
+                <COLUMN_HEADER value="false"/>
+                <SECTION_POSITION value="2"/>
+                <CONTENT_ID value="2"/>
+                <SECTION_ID value="2"/>
+                <COLUMN_SEPARATOR value=";"/>
+            </row>
+        </PM_BROADCAST_FILE_CONTENTS>
+        <PM_BROADCAST_COLUMNS>
+            <row>
+                <RIGHT_COLUMN_PADDING value="true"/>
+                <DB_FIELD_NAME value="TITLE"/>
+                <DB_TABLE_NAME value="AP_BOOK"/>
+                <COLUMNS_ID value="1"/>
+                <COLUMN_NUMBER value="10"/>
+                <COLUMN_NAME value="Titre"/>
+                <SECTION_ID value="1"/>
+            </row>
+            <row>
+                <RIGHT_COLUMN_PADDING value="false"/>
+                <DB_FIELD_NAME value="AUTHOR"/>
+                <DB_TABLE_NAME value="AP_BOOK"/>
+                <COLUMNS_ID value="2"/>
+                <COLUMN_NUMBER value="20"/>
+                <COLUMN_NAME value="Auteur"/>
+                <SECTION_ID value="1"/>
+            </row>
+            <row>
+                <RIGHT_COLUMN_PADDING value="true"/>
+                <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
+                <DB_TABLE_NAME value="AP_BOOK"/>
+                <COLUMN_DATE_FORMAT value="yyyyMM"/>
+                <COLUMNS_ID value="3"/>
+                <COLUMN_NUMBER value="30"/>
+                <COLUMN_NAME value="Année de publication"/>
+                <SECTION_ID value="1"/>
+            </row>
+            <row>
+                <RIGHT_COLUMN_PADDING value="true"/>
+                <DB_FIELD_NAME value="TITLE"/>
+                <DB_TABLE_NAME value="AP_BOOK"/>
+                <COLUMNS_ID value="4"/>
+                <COLUMN_NUMBER value="40"/>
+                <COLUMN_NAME value="Titre"/>
+                <SECTION_ID value="2"/>
+            </row>
+            <row>
+                <RIGHT_COLUMN_PADDING value="false"/>
+                <DB_FIELD_NAME value="AUTHOR"/>
+                <DB_TABLE_NAME value="AP_BOOK"/>
+                <COLUMNS_ID value="5"/>
+                <COLUMN_NUMBER value="50"/>
+                <COLUMN_NAME value="Auteur"/>
+                <SECTION_ID value="2"/>
+            </row>
+            <row>
+                <RIGHT_COLUMN_PADDING value="true"/>
+                <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
+                <DB_TABLE_NAME value="AP_BOOK"/>
+                <COLUMN_DATE_FORMAT value="yyyyMM"/>
+                <COLUMNS_ID value="6"/>
+                <COLUMN_NUMBER value="60"/>
+                <COLUMN_NAME value="année de publication"/>
+                <SECTION_ID value="2"/>
+            </row>
+        </PM_BROADCAST_COLUMNS>
+    </input>
+    <output>
+        <PM_SOURCE_SYSTEM>
+            <row>
+                <SOURCE_SYSTEM value="codjo"/>
+                <DATE_FORMAT value="yyyyMM"/>
+                <DECIMAL_SEPARATOR value="."/>
+            </row>
+        </PM_SOURCE_SYSTEM>
+        <PM_BROADCAST_FILES>
+            <row>
+                <FILE_ID value="2"/>
+                <FILE_NAME value="book.txt"/>
+                <DESTINATION_SYSTEM value="lib"/>
+                <AUTO_DISTRIBUTION value="false"/>
+                <HISTORISE_FILE value="false"/>
+                <SECTION_SEPARATOR value="false"/>
+                <FILE_HEADER value="false"/>
+                <DISTRIBUTION_METHOD value="NONE"/>
+            </row>
+        </PM_BROADCAST_FILES>
+
+        <PM_BROADCAST_SECTION>
+            <row>
+                <SECTION_NAME value="Ken Follett"/>
+                <FAMILY value="BOOKS"/>
+                <SELECTION_ID value="1"/>
+                <SECTION_ID value="2"/>
+            </row>
+            <row>
+                <SECTION_NAME value="sec1"/>
+                <FAMILY value="BOOKS"/>
+                <SELECTION_ID value="1"/>
+                <SECTION_ID value="3"/>
+                <DECIMAL_SEPARATOR value=","/>
+            </row>
+            <row>
+                <SECTION_NAME value="sec2"/>
+                <FAMILY value="BOOKS"/>
+                <SELECTION_ID value="1"/>
+                <SECTION_ID value="4"/>
+            </row>
+        </PM_BROADCAST_SECTION>
+        <PM_BROADCAST_FILE_CONTENTS>
+            <row>
+                <CONTENT_ID value="3"/>
+                <FILE_ID value="2"/>
+                <SECTION_ID value="2"/>
+                <SECTION_HEADER value="false"/>
+                <COLUMN_HEADER value="false"/>
+            </row>
+        </PM_BROADCAST_FILE_CONTENTS>
+        <PM_BROADCAST_COLUMNS>
+            <row>
+                <RIGHT_COLUMN_PADDING value="true"/>
+                <DB_FIELD_NAME value="TITLE"/>
+                <DB_TABLE_NAME value="AP_BOOK"/>
+                <COLUMNS_ID value="4"/>
+                <COLUMN_NUMBER value="40"/>
+                <COLUMN_NAME value="Titre"/>
+                <SECTION_ID value="2"/>
+            </row>
+            <row>
+                <RIGHT_COLUMN_PADDING value="false"/>
+                <DB_FIELD_NAME value="AUTHOR"/>
+                <DB_TABLE_NAME value="AP_BOOK"/>
+                <COLUMNS_ID value="5"/>
+                <COLUMN_NUMBER value="50"/>
+                <COLUMN_NAME value="Auteur"/>
+                <SECTION_ID value="2"/>
+            </row>
+            <row>
+                <RIGHT_COLUMN_PADDING value="true"/>
+                <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
+                <DB_TABLE_NAME value="AP_BOOK"/>
+                <COLUMN_DATE_FORMAT value="yyyyMM"/>
+                <COLUMNS_ID value="6"/>
+                <COLUMN_NUMBER value="60"/>
+                <COLUMN_NAME value="année de publication"/>
+                <SECTION_ID value="2"/>
+            </row>
+            <row>
+                <COLUMNS_ID value="7"/>
+                <SECTION_ID value="3"/>
+                <DB_TABLE_NAME value="AP_BOOK"/>
+                <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
+                <COLUMN_NAME value="champ1"/>
+                <COLUMN_NUMBER value="1"/>
+                <RIGHT_COLUMN_PADDING value="false"/>
+            </row>
+            <row>
+                <COLUMNS_ID value="8"/>
+                <SECTION_ID value="3"/>
+                <DB_TABLE_NAME value="AP_BOOK"/>
+                <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
+                <COLUMN_NAME value="Champ2"/>
+                <COLUMN_NUMBER value="2"/>
+                <RIGHT_COLUMN_PADDING value="false"/>
+            </row>
+        </PM_BROADCAST_COLUMNS>
+    </output>
+</story>

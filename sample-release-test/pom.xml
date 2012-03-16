@@ -22,10 +22,36 @@
             <groupId>net.codjo.sample</groupId>
             <artifactId>sample-gui</artifactId>
         </dependency>
+
+        <!--
+          | HACK : Add database engine + remove the wrong one (maven 2 bug - to be confirmed)
+        -->
         <dependency>
             <groupId>net.codjo.sample</groupId>
             <artifactId>sample-server</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>net.codjo.database</groupId>
+                    <artifactId>codjo-database-hsqldb</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>net.codjo.database</groupId>
+                    <artifactId>codjo-database-hsqldb-api</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+        <dependency>
+            <groupId>net.codjo.database</groupId>
+            <artifactId>codjo-database-${databaseType}</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.database</groupId>
+            <artifactId>codjo-database-${databaseType}-api</artifactId>
+        </dependency>
+        <!--
+          | End HACK
+        -->
+
         <dependency>
             <groupId>net.codjo.release-test</groupId>
             <artifactId>codjo-release-test</artifactId>

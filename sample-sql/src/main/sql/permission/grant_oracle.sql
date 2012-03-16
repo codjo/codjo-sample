@@ -107,5 +107,13 @@ select
 where
       grantee = 'ROLE_UTILISATEUR_IDW'
 
+
+
+
+
+String query = "select GRANTED_ROLE from DBA_ROLE_PRIVS "
+                           + "where GRANTEE ='" + userName + "' "
+                           + "and GRANTED_ROLE = '" + groupName.toUpperCase() + "'";
+
 */
 Prompt 'Fin Création des autorisations'

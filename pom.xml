@@ -93,7 +93,6 @@
         <serverPort>35700</serverPort>
         <serverHostDev>localhost</serverHostDev>
         <databaseApplicationUser>${defaultDatabaseApplicationUser}</databaseApplicationUser>
-        <!--<databaseApplicationPassword>${defaultDatabaseApplicationUser}</databaseApplicationPassword>-->
         <databaseApplicationPassword>${defaultDatabaseApplicationPassword}</databaseApplicationPassword>
         <!--
                    Les variables serverMainClass et batchMainClass sont utilises dans les scripts unix
