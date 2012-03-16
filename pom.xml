@@ -90,7 +90,7 @@
         <module>sample-release-test</module>
     </modules>
     <properties>
-        <serverPort>35700</serverPort>
+        <serverPort>35701</serverPort>
         <serverHostDev>localhost</serverHostDev>
         <databaseApplicationUser>${defaultDatabaseApplicationUser}</databaseApplicationUser>
         <databaseApplicationPassword>${defaultDatabaseApplicationPassword}</databaseApplicationPassword>
