@@ -37,6 +37,10 @@
             <artifactId>codjo-sql-server</artifactId>
         </dependency>
         <dependency>
+            <groupId>net.codjo.i18n</groupId>
+            <artifactId>codjo-i18n-common</artifactId>
+        </dependency>
+        <dependency>
             <groupId>net.codjo.mad</groupId>
             <artifactId>codjo-mad-server</artifactId>
         </dependency>
@@ -67,6 +71,11 @@
         <dependency>
             <groupId>net.codjo.test</groupId>
             <artifactId>codjo-test-common</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.codjo.tokio</groupId>
+            <artifactId>codjo-tokio</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

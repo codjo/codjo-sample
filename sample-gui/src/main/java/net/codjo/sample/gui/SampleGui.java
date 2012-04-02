@@ -8,6 +8,7 @@ import java.awt.Dimension;
 import java.io.IOException;
 import net.codjo.broadcast.gui.plugin.BroadcastGuiPlugin;
 import net.codjo.control.gui.plugin.ControlGuiPlugin;
+import net.codjo.i18n.gui.plugin.InternationalizationGuiPlugin;
 import net.codjo.imports.gui.plugin.ImportGuiPlugin;
 import net.codjo.mad.client.plugin.MadConnectionPlugin;
 import net.codjo.mad.gui.base.AbstractGuiPlugin;
@@ -34,6 +35,7 @@ public class SampleGui {
 
         guiClient.addPlugin(SecurityGuiPlugin.class);
         guiClient.addPlugin(SecurityClientPlugin.class);
+        guiClient.addPlugin(InternationalizationGuiPlugin.class);
         guiClient.addPlugin(MadConnectionPlugin.class);
         guiClient.addPlugin(MadGuiPlugin.class);
         guiClient.addPlugin(WorkflowGuiPlugin.class);

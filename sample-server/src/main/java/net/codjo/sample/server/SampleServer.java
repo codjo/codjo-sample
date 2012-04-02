@@ -3,6 +3,7 @@ import net.codjo.agent.AgentContainer;
 import net.codjo.agent.ContainerConfiguration;
 import net.codjo.broadcast.server.plugin.BroadcastServerPlugin;
 import net.codjo.control.server.plugin.ControlServerPlugin;
+import net.codjo.i18n.common.plugin.InternationalizationPlugin;
 import net.codjo.imports.server.plugin.ImportServerPlugin;
 import net.codjo.mad.server.plugin.MadServerPlugin;
 import net.codjo.plugin.common.ApplicationPlugin;
@@ -24,6 +25,7 @@ public class SampleServer {
 
         server.addPlugin(JdbcServerPlugin.class);
         server.addPlugin(SecurityServerPlugin.class);
+        server.addPlugin(InternationalizationPlugin.class);
         server.addPlugin(MadServerPlugin.class);
         server.addPlugin(WorkflowServerPlugin.class);
         server.addPlugin(WorkflowAuditServerPlugin.class);
