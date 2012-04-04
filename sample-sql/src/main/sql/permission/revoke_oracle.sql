@@ -23,6 +23,16 @@ revoke all on PM_IMPORT_SETTINGS                    from APP_USER
 /
 revoke all on PM_SOURCE_SYSTEM                      from APP_USER
 /
+revoke all on REF_AUTHOR                            from APP_USER
+/
+revoke all on AP_BOOK                               from APP_USER
+/
+revoke all on AP_ALBUM                              from APP_USER
+/
+revoke all on Q_AP_ALBUM                            from APP_USER
+/
+revoke all on Q_AP_USER_ALBUM                       from APP_USER
+/
 /**************************/
 /*  Droits sur les vues  */
 /**************************/

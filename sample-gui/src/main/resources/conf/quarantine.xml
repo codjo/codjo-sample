@@ -4,49 +4,23 @@
 -->
 <quarantines>
     <!--
-        QUARANTAINE DES EMETTEURS
+        QUARANTAINE DES ALBUMS
     -->
-    <gui name="Emetteur" tooltip="Quarantaine des émetteurs">
-        <quarantine>Q_AP_ISSUER</quarantine>
-        <quser>Q_AP_USER_ISSUER</quser>
-        <icon>red.quarantine.issuer</icon>
-        <window title="Quarantaine émetteur">
-            <preference>QUserIssuerWindow</preference>
+    <gui name="Album" tooltip="Quarantaine des albums">
+        <quarantine>Q_AP_ALBUM</quarantine>
+        <quser>Q_AP_USER_ALBUM</quser>
+        <icon>sample.quarantine.album</icon>
+        <window title="Quarantaine des albums">
+            <preference>QUserAlbumWindow</preference>
             <dbFilter>errorType</dbFilter>
             <dbFilter>sourceFile</dbFilter>
             <dbFilter>creationDatetime</dbFilter>
         </window>
-        <detail title="Emetteur en quarantaine">
-            <!-- AP_ISSUER FIELDS -->
-            <field>issuerCode</field>
-            <field>referenceIssuerCode</field>
-            <field>issuerName</field>
-            <field>bloombergIssuerName</field>
-            <field>issuerId1</field>
-            <field>issuerId2</field>
-            <field>bloombergIssuerId</field>
-            <field>issuerCountry</field>
-            <field>countryOfRisk</field>
-            <!--<field>ultParentCountryOfRisk</field>-->
-            <field>issuerCurrencyCode</field>
-            <field>issuerType</field>
-            <field>spvFlag</field>
-            <!-- AP_ISSUER_RATINGS FIELDS -->
-            <field>ltSpRating</field>
-            <field>ltMoodyRating</field>
-            <field>ltFitchRating</field>
-            <field>stSpRating</field>
-            <field>stMoodyRating</field>
-            <field>stFitchRating</field>
-            <field>spOutlook</field>
-            <field>moodyOutlook</field>
-            <field>fitchOutlook</field>
-            <!-- AP_ISSUER_SECTOR FIELDS -->
-            <field>sbf250ShareSubsectorCode</field>
-            <field>icbShareSubsectCode</field>
-            <field>msciShareSubsectorCode</field>
-            <field>lhmBrtRateSubsectorCode</field>
-            <field>idBbCompany</field>
+        <detail title="Album en quarantaine">
+            <!-- AP_ALBUM FIELDS -->
+            <field>title</field>
+            <field>author</field>
+            <field>publicationYear</field>
             <!-- Quarantine -->
             <field>errorLog</field>
             <field>errorType</field>

@@ -16,5 +16,6 @@
         </role>
     </roles>
 
+    <include name="@basedir@/src/datagen/StructureDef.xml"/>
     <include name="@basedir@/src/datagen/TableDataDef.xml"/>
 </data>

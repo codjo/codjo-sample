@@ -7,7 +7,7 @@
 
     <security-model user="${testEnvironment.user}" roles="utilisateur"/>
     <gui-test>
-        <group name="Grisage du menu pour les utilisateurs standards (rôle RED_group)">
+        <group name="Grisage du menu pour les utilisateurs standards (rôle utilisateur)">
             <assertEnabled menu="Administration" expected="false"/>
             <assertEnabled menu="Administration:Administration utilisateur" expected="false"/>
         </group>
@@ -15,7 +15,7 @@
 
     <security-model user="${testEnvironment.user}" roles="administrateur"/>
     <gui-test>
-        <group name="Activation du menu pour les utilisateurs Admin (rôle RED_adminGroup)">
+        <group name="Activation du menu pour les utilisateurs Admin (rôle administrateur)">
             <assertEnabled menu="Administration" expected="true"/>
 
             <assertEnabled menu="Administration:Administration utilisateur" expected="true"/>

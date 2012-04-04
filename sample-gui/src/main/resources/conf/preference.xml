@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <preferenceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xsi:noNamespaceSchemaLocation="http://preference.xsd">
-    <!--<preference id="DeliveryList"-->
-                <!--detailWindowClassName="DeliveryFrame">-->
-        <!--<selectAll>selectAllDelivery</selectAll>-->
-        <!--<selectByPk>selectDeliveryById</selectByPk>-->
-        <!--<update>updateDelivery</update>-->
-        <!--<delete>deleteDelivery</delete>-->
-        <!--<insert>newDelivery</insert>-->
-        <!--<column fieldName="deliveryName" label="Nom de la livraison" preferredSize="200"/>-->
-        <!--<column fieldName="deliveryDescription" label="Description de la livraison" preferredSize="200"/>-->
-        <!--<hidden>-->
-            <!--<column fieldName="applicationId"/>-->
-            <!--<column fieldName="deliveryId"/>-->
-        <!--</hidden>-->
-    <!--</preference>-->
     <preference id="SourceSystemWindow" detailWindowClassName="net.codjo.control.gui.system.SourceSystemWindow">
         <selectByPk>selectSourceSystemById</selectByPk>
         <selectAll>selectAllSourceSystem</selectAll>
@@ -24,5 +10,19 @@
         <column fieldName="sourceSystem" label="Système source" minSize="20"/>
         <column fieldName="dateFormat" label="Format de la date" minSize="50"/>
         <column fieldName="decimalSeparator" label="Séparateur décimal" minSize="50"/>
+    </preference>
+    <preference id="QUserAlbumWindow"
+                detailWindowClassName="net.codjo.control.gui.plugin.DefaultQuarantineDetailWindow">
+        <selectByPk>selectQUserAlbumById</selectByPk>
+        <selectAll>selectAllQUserAlbumWithParameters</selectAll>
+        <update>updateQUserAlbum</update>
+        <delete>deleteQUserAlbum</delete>
+        <column fieldName="title" label="Titre de l'album" preferredSize="100"/>
+        <column fieldName="author" label="Artiste" preferredSize="100"/>
+        <column fieldName="publicationYear" label="Année de publication" preferredSize="100"/>
+        <column fieldName="errorType" label="Error" preferredSize="50"/>
+        <column fieldName="errorLog" label="Description" preferredSize="200"/>
+        <column fieldName="sourceFile" label="File" preferredSize="0"/>
+        <column fieldName="creationDatetime" label="Import date" preferredSize="100"/>
     </preference>
 </preferenceList>

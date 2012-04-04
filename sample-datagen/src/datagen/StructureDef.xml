@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://datagen.xsd">
+    <structure name="net.codjo.sample.data.Quarantine">
+        <description>Mandatory fields of quarantine table.</description>
+        <feature>
+            <bean/>
+        </feature>
+        <properties>
+            <field name="errorLog" type="string">
+                <description>Log</description>
+                <sql type="varchar" precision="255"/>
+            </field>
+
+            <field name="errorType" type="java.lang.Integer">
+                <description>Error type</description>
+                <sql type="integer" default="0"/>
+            </field>
+
+            <field name="sourceSystem" type="string">
+                <description>Source system</description>
+                <sql type="varchar" precision="20"/>
+            </field>
+
+            <field name="sourceFile" type="string">
+                <description>Source file</description>
+                <sql type="varchar" precision="255"/>
+            </field>
+
+            <field name="creationDatetime" type="java.sql.Timestamp">
+                <description>Import date</description>
+                <sql type="timestamp"/>
+            </field>
+        </properties>
+    </structure>
+</entities>

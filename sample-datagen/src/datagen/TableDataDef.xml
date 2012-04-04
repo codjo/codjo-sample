@@ -22,7 +22,7 @@
             <field name="title"/>
             <field name="author"/>
         </primary-key>
-        
+
         <foreign-keys>
             <link id="FK_AUTH_BOOK" table="net.codjo.sample.Author">
                 <field from="author" to="author"/>
@@ -70,4 +70,90 @@
             </field>
         </properties>
     </entity>
+
+    <entity name="net.codjo.sample.Album" table="AP_ALBUM">
+        <description>Une table contenant des albums de musique</description>
+
+        <feature>
+            <sql/>
+            <bean/>
+            <castor/>
+            <doc-structure/>
+            <handler-update id="updateAlbum"/>
+            <handler-select id="selectAllAlbum" type="All"/>
+            <handler-select id="selectAlbumById" type="By_Primary-Key"/>
+            <sql-constraint/>
+            <sql-index>
+                <idx type="primary-key" name-prefix="X1_" clustered="false"/>
+            </sql-index>
+        </feature>
+
+        <primary-key>
+            <field name="title"/>
+            <field name="author"/>
+        </primary-key>
+
+        <foreign-keys>
+            <link id="FK_AUTH_ALBUM" table="net.codjo.sample.Author">
+                <field from="author" to="author"/>
+            </link>
+        </foreign-keys>
+
+        <properties>
+            <field name="title" type="string">
+                <description>Titre de l'album</description>
+                <sql type="varchar" precision="255" required="true"/>
+            </field>
+            <field name="author" type="string">
+                <description>Artiste</description>
+                <sql type="varchar" precision="150" required="true"/>
+            </field>
+            <field name="publicationYear" type="java.sql.Date">
+                <description>Année de publication</description>
+                <sql type="timestamp"/>
+            </field>
+        </properties>
+    </entity>
+
+    <entity name="net.codjo.sample.QAlbum" table="Q_AP_ALBUM" type="quarantine">
+        <description>Quarantaine des albums de musique</description>
+
+        <feature>
+            <doc-structure/>
+            <sql gap="1000"/>
+            <sql-index>
+                <idx type="primary-key" name-prefix="X1_"/>
+            </sql-index>
+            <user-quarantine name="net.codjo.sample.QUserAlbum"
+                             table="Q_AP_USER_ALBUM"/>
+        </feature>
+
+        <primary-key>
+            <field name="quarantineId"/>
+        </primary-key>
+
+        <properties>
+            <!-- TECHNICAL FIELDs -->
+            <field name="quarantineId" type="big-decimal">
+                <description>Quarantine Id</description>
+                <sql identity="true" precision="23" required="true" type="numeric"/>
+            </field>
+            <!-- Quarantine FIELDs -->
+            <field name="title" type="string">
+                <description>Titre de l'album</description>
+                <sql type="varchar" precision="255" required="true"/>
+            </field>
+            <field name="author" type="string">
+                <description>Artiste</description>
+                <sql type="varchar" precision="150" required="true"/>
+            </field>
+            <field name="publicationYear" type="java.sql.Date">
+                <description>Année de publication</description>
+                <sql type="timestamp"/>
+            </field>
+            <!-- STRUCTURE FIELDs -->
+            <field name="quarantine" structure="net.codjo.sample.data.Quarantine"/>
+        </properties>
+    </entity>
+
 </entities>

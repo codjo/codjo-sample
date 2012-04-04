@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<release-test name="TransfertQuarantaineAlbum"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="http://test-release.xsd">
+
+    <description>Test du transfert des données de la quarantaines des Albums</description>
+
+    <tokio-load id="db.load" file="TransfertQuarantaineAlbum.tokio"/>
+    <tokio-set-db id="db.setdb" refId="db.load" scenario="TransfertQuarantaineAlbum"/>
+
+    <security-model user="${testEnvironment.user}" roles="utilisateur"/>
+
+    <gui-test>
+        <group>
+            <group name="Ouverture de l'ihm des quarantaines">
+                <click menu="Quarantaine:Album"/>
+                <assertFrame title="Quarantaine des albums"/>
+                <assertListSize name="requestTable" expected="1"/>
+            </group>
+        </group>
+    </gui-test>
+
+    <tokio-assert refId="db.setdb" allTables="true"/>
+</release-test>

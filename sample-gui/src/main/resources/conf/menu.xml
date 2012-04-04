@@ -25,6 +25,10 @@
         <menu plugin="net.codjo.workflow.gui.plugin.WorkflowAuditGuiPlugin" actionId="WorkflowLogAction"/>
     </menu>
     <menu>
+        <name>Quarantaine</name>
+        <menu plugin="net.codjo.control.gui.plugin.ControlGuiPlugin" actionId="Album"/>
+    </menu>
+    <menu>
         <name>Administration</name>
         <menu plugin="net.codjo.security.gui.plugin.SecurityGuiPlugin" actionId="UserForm"/>
     </menu>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<story id="TransfertQuarantaineAlbum" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="file:C:/dev/platform/cache/xsd/sample-story.xsd">
+    <input>
+        <Q_AP_ALBUM>
+            <row>
+                <QUARANTINE_ID value="1"/>
+                <TITLE value="Le Dahlia noir"/>
+                <AUTHOR value="James Ellroy"/>
+                <PUBLICATION_YEAR value="1987-01-01"/>
+                <ERROR_TYPE value="1"/>
+            </row>
+            <row>
+                <QUARANTINE_ID value="2"/>
+                <TITLE value="Les piliers de la Terre"/>
+                <AUTHOR value="Ken Follett"/>
+                <PUBLICATION_YEAR value="1990-01-01"/>
+            </row>
+        </Q_AP_ALBUM>
+    </input>
+    <output>
+    </output>
+</story>
