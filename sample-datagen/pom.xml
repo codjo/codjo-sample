@@ -20,6 +20,11 @@
             <artifactId>codjo-mad-server</artifactId>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>net.codjo.control</groupId>
+            <artifactId>codjo-control-server</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <!--
