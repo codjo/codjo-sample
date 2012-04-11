@@ -77,7 +77,7 @@
         </Q_AP_ALBUM>
     </input>
     <output>
-        <AP_ALBUM>
+        <AP_ALBUM orderClause="TITLE, AUTHOR">
             <row>
                 <TITLE value="Le Dahlia noir"/>
                 <AUTHOR value="James Ellroy"/>
