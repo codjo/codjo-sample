@@ -3,7 +3,7 @@
         <entry>
             <user name="${defaultUser}"/>
             <list>
-                <role name="utilisateur"/>
+                <role name="administrateur"/>
             </list>
         </entry>
     </grants>

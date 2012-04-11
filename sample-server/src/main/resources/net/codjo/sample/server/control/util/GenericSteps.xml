@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<abstract-steps>
+
+    <!--                      -->
+    <!-- Contrôles génériques -->
+    <!--                      -->
+
+    <step id="GenericIsNotNullControl" type="control">
+        <description>Contrôle générique qu'une colonne est non nulle.</description>
+        <dictionary>
+            <variable name="control.column"/>
+        </dictionary>
+        <test>NONE</test>
+        <parameter index="1" type="int">$error_code$</parameter>
+        <parameter index="2" type="string">$error_message$</parameter>
+        <query><![CDATA[
+            update $control.table$
+            set ERROR_TYPE = ?, ERROR_LOG = ?
+            where $line.ok$
+                and $control.column$ is null or  trim($control.column$) is null
+        ]]></query>
+    </step>
+
+    <step id="GenericStringIsNotNullControl" type="control">
+        <description>Contrôle générique qu'une colonne de type chaîne de caractères est renseignée.
+        </description>
+        <dictionary>
+            <variable name="control.column"/>
+        </dictionary>
+        <test>NONE</test>
+        <parameter index="1" type="int">$error_code$</parameter>
+        <parameter index="2" type="string">$error_message$</parameter>
+        <query><![CDATA[
+            update $control.table$
+            set ERROR_TYPE = ?, ERROR_LOG = ?
+            where $line.ok$
+                and rtrim($control.column$) is null
+        ]]></query>
+    </step>
+
+    <step id="GenericIsInReferentialControl" type="control">
+        <dictionary>
+            <description>Contrôle générique que la valeur d'une colonne se trouve dans un référentiel.</description>
+            <variable name="control.column"/>
+            <variable name="ref.table"/>
+            <variable name="ref.column"/>
+        </dictionary>
+        <test>NONE</test>
+        <parameter index="1" type="int">$error_code$</parameter>
+        <parameter index="2" type="string">$error_message$</parameter>
+        <query><![CDATA[
+            update $control.table$ ctrl
+            set ctrl.ERROR_TYPE = ?,
+                ctrl.ERROR_LOG = ?
+            where ctrl.$control.column$ not in(select $ref.table$.$ref.column$ from $ref.table$)
+        ]]></query>
+    </step>
+
+    <step id="GenericDateFormatControl" type="control">
+        <description>Contrôle du format de date (dd/MM/yyyy).</description>
+        <dictionary>
+            <variable name="control.column"/>
+        </dictionary>
+        <test>NONE</test>
+        <parameter index="1" type="int">$error_code$</parameter>
+        <parameter index="2" type="string">$error_message$</parameter>
+        <query><![CDATA[
+            update
+            (
+                SELECT ctrl.ERROR_TYPE, ctrl.ERROR_LOG, ? as et, ? as el
+                FROM $control.table$ ctrl
+                where ctrl.$control.column$ is not null
+                    and pk_util.isDate(ctrl.$control.column$) = 1
+                    and ctrl.ERROR_TYPE <= 0
+            )
+            SET ERROR_TYPE = et, ERROR_LOG = el
+          ]]></query>
+    </step>
+
+    <step id="LengthStringControl" type="control">
+        <description>Contrôle de la longeur d'un champs de type string.</description>
+        <dictionary>
+            <variable name="control.column"/>
+            <variable name="control.length"/>
+        </dictionary>
+        <test>NONE</test>
+        <parameter index="1" type="int">$error_code$</parameter>
+        <parameter index="2" type="string">$error_message$</parameter>
+        <query><![CDATA[
+            update (
+                SELECT ctrl.ERROR_TYPE, ctrl.ERROR_LOG, ? as et, ? as el
+                from $control.table$ ctrl
+                where ctrl.$line.ok$
+                  and length(ctrl.$control.column$) > $control.length$
+            )
+            SET ERROR_TYPE = et, ERROR_LOG = el
+
+          ]]></query>
+    </step>
+</abstract-steps>

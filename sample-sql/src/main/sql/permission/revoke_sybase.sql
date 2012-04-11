@@ -18,6 +18,7 @@ revoke all on AP_BOOK                               to Utilisateur, Maintenance,
 revoke all on AP_ALBUM                              to Utilisateur, Maintenance, Consultation
 revoke all on Q_AP_ALBUM                            to Utilisateur, Maintenance, Consultation
 revoke all on Q_AP_USER_ALBUM                       to Utilisateur, Maintenance, Consultation
+revoke all on CTRL_ALBUM                            to Utilisateur, Maintenance, Consultation
 go
 /**************************/
 /*  Droits sur les vues  */

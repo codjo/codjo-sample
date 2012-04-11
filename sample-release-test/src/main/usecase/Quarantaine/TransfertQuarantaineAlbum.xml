@@ -15,7 +15,23 @@
             <group name="Ouverture de l'ihm des quarantaines">
                 <click menu="Quarantaine:Album"/>
                 <assertFrame title="Quarantaine des albums"/>
-                <assertListSize name="requestTable" expected="1"/>
+                <assertListSize name="requestTable" expected="4"/>
+
+                <select name="requestTable" row="0"/>
+                <click name="requestTable.EditAction"/>
+
+                <setValue name="Album en quarantaine_Artiste" value="Rudyard Kipling"/>
+                <click name="ButtonPanelGui.okButton"/>
+
+                <select name="requestTable" row="1"/>
+                <click name="requestTable.EditAction"/>
+
+                <setValue name="Album en quarantaine_Artiste" value="J.R.R. Tolkien"/>
+                <click name="ButtonPanelGui.okButton"/>
+
+                <click label="Envoyer"/>
+                <!--<pause></pause>-->
+                <assertFrame title="Erreur" closed="true"/>
             </group>
         </group>
     </gui-test>

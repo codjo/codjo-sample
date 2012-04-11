@@ -141,11 +141,11 @@
             <!-- Quarantine FIELDs -->
             <field name="title" type="string">
                 <description>Titre de l'album</description>
-                <sql type="varchar" precision="255" required="true"/>
+                <sql type="varchar" precision="255"/>
             </field>
             <field name="author" type="string">
                 <description>Artiste</description>
-                <sql type="varchar" precision="150" required="true"/>
+                <sql type="varchar" precision="150"/>
             </field>
             <field name="publicationYear" type="java.sql.Date">
                 <description>Année de publication</description>
@@ -153,6 +153,59 @@
             </field>
             <!-- STRUCTURE FIELDs -->
             <field name="quarantine" structure="net.codjo.sample.data.Quarantine"/>
+        </properties>
+    </entity>
+
+    <entity name="net.codjo.sample.CtrlAlbum" table="CTRL_ALBUM">
+        <description>Control Album Table</description>
+        <feature>
+            <sql/>
+            <sql-index>
+                <idx type="primary-key" name-prefix="X1_" clustered="false"/>
+            </sql-index>
+        </feature>
+
+        <primary-key key-generator="MAX">
+            <field name="quarantineId"/>
+        </primary-key>
+
+        <properties>
+            <field name="quarantineId" type="big-decimal">
+                <description>Quarantine id</description>
+                <sql type="numeric" precision="38,0" required="true"/>
+            </field>
+            <field name="title" type="string">
+                <description>Titre de l'album</description>
+                <sql type="varchar" precision="255"/>
+            </field>
+            <field name="author" type="string">
+                <description>Artiste</description>
+                <sql type="varchar" precision="255"/>
+            </field>
+            <field name="publicationYear" type="string">
+                <description>Année de publication</description>
+                <sql type="varchar" precision="255"/>
+            </field>
+            <field name="errorLog" type="string">
+                <description>Error log</description>
+                <sql type="varchar" precision="255"/>
+            </field>
+            <field name="errorType" type="integer">
+                <description>Error type</description>
+                <sql type="integer" default="0"/>
+            </field>
+            <field name="sourceSystem" type="string">
+                <description>Source System</description>
+                <sql type="varchar" precision="20"/>
+            </field>
+            <field name="sourceFile" type="string">
+                <description>Source File</description>
+                <sql type="varchar" precision="255"/>
+            </field>
+            <field name="creationDatetime" type="timestamp">
+                <description>Creation Datetime</description>
+                <sql type="timestamp"/>
+            </field>
         </properties>
     </entity>
 

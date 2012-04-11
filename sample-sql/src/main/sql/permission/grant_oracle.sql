@@ -33,6 +33,8 @@ grant select, insert, delete, update, references on Q_AP_ALBUM                  
 /
 grant select, insert, delete, update, references on Q_AP_USER_ALBUM                 to APP_USER
 /
+grant select, insert, delete, update, references on CTRL_ALBUM                      to APP_USER
+/
 
 /**************************/
 /*  Droits sur les vues  */

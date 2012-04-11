@@ -31,6 +31,7 @@
     <menu>
         <name>Administration</name>
         <menu plugin="net.codjo.security.gui.plugin.SecurityGuiPlugin" actionId="UserForm"/>
+        <menu plugin="net.codjo.workflow.gui.plugin.WorkflowAuditGuiPlugin" actionId="WorkflowLogAction"/>
     </menu>
     <menu gui_contexte_property="Menu Fenetre"/>
     <menu>

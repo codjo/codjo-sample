@@ -33,6 +33,8 @@ revoke all on Q_AP_ALBUM                            from APP_USER
 /
 revoke all on Q_AP_USER_ALBUM                       from APP_USER
 /
+revoke all on CTRL_ALBUM                            from APP_USER
+/
 /**************************/
 /*  Droits sur les vues  */
 /**************************/

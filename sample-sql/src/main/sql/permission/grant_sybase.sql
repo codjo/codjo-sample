@@ -19,6 +19,7 @@ grant select, insert, delete, update, references on AP_BOOK                     
 grant select, insert, delete, update, references on AP_ALBUM                        to Utilisateur, Maintenance
 grant select, insert, delete, update, references on Q_AP_ALBUM                      to Utilisateur, Maintenance
 grant select, insert, delete, update, references on Q_AP_USER_ALBUM                 to Utilisateur, Maintenance
+grant select, insert, delete, update, references on CTRL_ALBUM                      to Utilisateur, Maintenance
 go
 
 /**************************/
