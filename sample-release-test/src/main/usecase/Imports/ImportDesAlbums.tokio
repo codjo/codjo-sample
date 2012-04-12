@@ -5,7 +5,7 @@
         <PM_SOURCE_SYSTEM>
             <row>
                 <SOURCE_SYSTEM value="codjo"/>
-                <DATE_FORMAT value="yyyyMM"/>
+                <DATE_FORMAT value="yyyy-MM-dd"/>
                 <DECIMAL_SEPARATOR value="."/>
             </row>
         </PM_SOURCE_SYSTEM>
@@ -46,42 +46,45 @@
 
         <REF_AUTHOR>
             <row>
-                <AUTHOR value="Nine Inch Nails"/>
-                <BIOGRAPHY value="1988?present"/>
-            </row>
-            <row>
                 <AUTHOR value="Radiohead"/>
-                <BIOGRAPHY value="1985?present"/>
+                <BIOGRAPHY value="1985-present"/>
             </row>
             <row>
                 <AUTHOR value="Archive"/>
-                <BIOGRAPHY value="1994?present"/>
+                <BIOGRAPHY value="1994-present"/>
             </row>
         </REF_AUTHOR>
+
         <AP_ALBUM>
             <row id="initialAlbum">
                 <TITLE value="A title"/>
-                <AUTHOR value="Nine Inch Nails"/>
+                <AUTHOR value="Radiohead"/>
             </row>
         </AP_ALBUM>
     </input>
     <output>
-        <AP_ALBUM>
-            <row inheritId="initialAlbum"/>
+        <Q_AP_ALBUM>
             <row>
                 <TITLE value="Further down the spiral"/>
                 <AUTHOR value="Nine Inch Nails"/>
-                <PUBLICATION_YEAR value="1995-01"/>
+                <PUBLICATION_YEAR value="1995-01-01"/>
+                <SOURCE_SYSTEM value="codjo"/>
+                <ERROR_TYPE value="20"/>
+                <ERROR_LOG value="Author unknown."/>
             </row>
+        </Q_AP_ALBUM>
+
+        <AP_ALBUM orderClause="TITLE, AUTHOR">
+            <row copy="initialAlbum"/>
             <row>
                 <TITLE value="You All Look the Same to Me"/>
                 <AUTHOR value="Archive"/>
-                <PUBLICATION_YEAR value="2002-01"/>
+                <PUBLICATION_YEAR value="2002-01-01"/>
             </row>
             <row>
                 <TITLE value="Pablo Honey"/>
                 <AUTHOR value="Radiohead"/>
-                <PUBLICATION_YEAR value="1993-01"/>
+                <PUBLICATION_YEAR value="1993-01-01"/>
             </row>
         </AP_ALBUM>
     </output>

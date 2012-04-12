@@ -1,4 +1,4 @@
 Title;Author;Publication year
-Further down the spiral;Nine Inch Nails;1995-01
-You All Look the Same to Me;Archive;2002-01
-Pablo Honey;Radiohead;1993-01
+Further down the spiral;Nine Inch Nails;1995-01-01
+You All Look the Same to Me;Archive;2002-01-01
+Pablo Honey;Radiohead;1993-01-01
