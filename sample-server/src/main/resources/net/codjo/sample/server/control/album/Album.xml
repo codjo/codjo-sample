@@ -65,13 +65,10 @@
             <test>NONE</test>
             <query>
                 <![CDATA[
-                    DELETE FROM $quarantine.table$ quarantine
-                    WHERE quarantine.QUARANTINE_ID in
-                    (
-                        SELECT ctrl.QUARANTINE_ID
-                        FROM $control.table$ ctrl
-                        WHERE ctrl.$line.ok$
-                    )
+                    delete from $quarantine.table$ quarantine
+                    where quarantine.QUARANTINE_ID in (select ctrl.QUARANTINE_ID
+                                                       from $control.table$ ctrl
+                                                       where ctrl.$line.ok$)
                     ]]>
             </query>
         </step>
@@ -80,10 +77,10 @@
             <test>NONE</test>
             <query>
                 <![CDATA[
-                        insert into AP_ALBUM (TITLE, AUTHOR, PUBLICATION_YEAR)
-                        select CTRL_ALBUM.TITLE, CTRL_ALBUM.AUTHOR, to_timestamp(CTRL_ALBUM.PUBLICATION_YEAR)
-                        from CTRL_ALBUM
-                        where $line.ok$
+                insert into AP_ALBUM (TITLE, AUTHOR, PUBLICATION_YEAR)
+                select CTRL_ALBUM.TITLE, CTRL_ALBUM.AUTHOR, to_timestamp(CTRL_ALBUM.PUBLICATION_YEAR)
+                from CTRL_ALBUM
+                where $line.ok$
                 ]]>
             </query>
         </step>

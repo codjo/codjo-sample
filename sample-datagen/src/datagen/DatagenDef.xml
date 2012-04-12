@@ -10,6 +10,7 @@
             <include>com.agf.broadcast.gui.selector.DeleteSelectorAction</include>
 
             <exclude>administrate-user</exclude>
+            <exclude>net.codjo.workflow.gui.plugin.WorkflowAuditGuiPlugin#WorkflowLogAction</exclude>
         </role>
         <role id="administrateur">
             <include>*</include>
