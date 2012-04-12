@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <application-controls name="SAMPLE">
     <integration-definition>
-        <plan>/net/codjo/sample/server/control/album/Album.xml</plan>
+        <plan>/net/codjo/sample/server/control/album/QAlbum.xml</plan>
         <transfert quarantine="Q_AP_ALBUM" user="Q_AP_USER_ALBUM"/>
+    </integration-definition>
+    <integration-definition>
+        <plan>/net/codjo/sample/server/control/album/Album.xml</plan>
     </integration-definition>
 </application-controls>
