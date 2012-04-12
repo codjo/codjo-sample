@@ -50,9 +50,17 @@
 
         <feature>
             <sql/>
+            <bean/>
+            <castor/>
             <sql-index>
                 <idx type="primary-key" name-prefix="X1_" clustered="false"/>
             </sql-index>
+            <handler-delete id="delete${className}"/>
+            <handler-update id="update${className}"/>
+            <handler-new id="new${className}"/>
+            <handler-select id="select${className}ById" type="By_Primary-Key"/>
+            <handler-select id="selectAll${className}" type="All"/>
+            <handler-requetor id="requetor${className}"/>
         </feature>
 
         <primary-key>

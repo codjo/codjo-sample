@@ -19,8 +19,26 @@
             <include>updateQUserAlbum</include>
             <include>deleteQUserAlbum</include>
 
+            <include>net.codjo.sample.gui.referential.AuthorAction</include>
+            <include>selectAllAuthor</include>
+            <include>selectAuthorById</include>
+            <include>updateAuthor</include>
+            <include>deleteAuthor</include>
+            <include>newAuthor</include>
+
             <exclude>administrate-user</exclude>
             <exclude>net.codjo.workflow.gui.plugin.WorkflowAuditGuiPlugin#WorkflowLogAction</exclude>
+        </role>
+        <role id="import">
+            <include>getStructure</include>
+
+            <include>net.codjo.control.gui.plugin.ControlGuiPlugin#Album</include>
+            <include>net.codjo.control.gui.util.ValidationAction</include>
+            <include>net.codjo.control.gui.util.ForceAction</include>
+            <include>selectQUserAlbumById</include>
+            <include>selectAllQUserAlbumWithParameters</include>
+            <include>updateQUserAlbum</include>
+            <include>deleteQUserAlbum</include>
         </role>
         <role id="administrateur">
             <include>*</include>

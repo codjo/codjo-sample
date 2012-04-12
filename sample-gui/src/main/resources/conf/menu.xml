@@ -29,6 +29,10 @@
         <menu plugin="net.codjo.control.gui.plugin.ControlGuiPlugin" actionId="Album"/>
     </menu>
     <menu>
+        <name>Ref</name>
+        <menu action="net.codjo.sample.gui.referential.AuthorAction"/>
+    </menu>
+    <menu>
         <name>Administration</name>
         <menu plugin="net.codjo.security.gui.plugin.SecurityGuiPlugin" actionId="UserForm"/>
         <menu plugin="net.codjo.workflow.gui.plugin.WorkflowAuditGuiPlugin" actionId="WorkflowLogAction"/>

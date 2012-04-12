@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<release-test name="TransfertQuarantaineAlbum"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="http://test-release.xsd"
+      enabled="false">
+
+    <description>Test gestion des artistes</description>
+
+    <tokio-load id="db.load" file="Artistes.tokio"/>
+    <tokio-set-db id="db.setdb" refId="db.load" scenario="Artistes"/>
+
+    <security-model user="${testEnvironment.user}" roles="utilisateur"/>
+
+    <gui-test>
+        <group>
+            <group name="Author manipulation">
+                <click menu="Ref:Artistes"/>
+                <assertFrame title="Artistes"/>
+                <assertListSize name="AuthorList" expected="4"/>
+                <click name="AuthorList.AddAction"/>
+                <setValue name="author" value="Dan Simmons"/>
+                <setValue name="biography" value="1948-present"/>
+                <click name="ButtonPanelGui.okButton"/>
+                <assertListSize name="AuthorList" expected="5"/>
+
+                <assertTable name="AuthorList" row="2" column="1" expected="J.R.R. Tolkien"/>
+                <select name="AuthorList" row="2"/>
+                <click name="ButtonPanelGui.deleteButton"/>
+                <assertListSize name="AuthorList" expected="4"/>
+            </group>
+        </group>
+    </gui-test>
+
+    <tokio-assert refId="db.setdb" allTables="true"/>
+</release-test>

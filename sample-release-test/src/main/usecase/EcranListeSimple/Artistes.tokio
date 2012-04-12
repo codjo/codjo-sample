@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<story id="Artistes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="file:C:/dev/platform/cache/xsd/sample-story.xsd">
+    <input>
+        <REF_AUTHOR>
+            <row id="Ellroy">
+                <AUTHOR value="James Ellroy"/>
+            </row>
+            <row id="Follett">
+                <AUTHOR value="Ken Follett"/>
+            </row>
+            <row id="Tolkien">
+                <AUTHOR value="J.R.R. Tolkien"/>
+            </row>
+            <row id="Kipling">
+                <AUTHOR value="Rudyard Kipling"/>
+            </row>
+        </REF_AUTHOR>
+    </input>
+    <output>
+        <REF_AUTHOR orderClause="AUTHOR">
+            <copy row="Ellroy"/>
+            <copy row="Follett"/>
+            <copy row="Kipling"/>
+            <row>
+                <AUTHOR value="Dan Simmons"/>
+                <BIOGRAPHY value="1948-present"/>
+            </row>
+        </REF_AUTHOR>
+    </output>
+</story>

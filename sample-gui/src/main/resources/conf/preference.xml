@@ -25,4 +25,15 @@
         <column fieldName="sourceFile" label="File" preferredSize="0"/>
         <column fieldName="creationDatetime" label="Import date" preferredSize="100"/>
     </preference>
+    <preference id="AuthorList" detailWindowClassName="net.codjo.sample.gui.referential.AuthorDetailLogic">
+        <selectAll>selectAllAuthor</selectAll>
+        <selectByPk>selectAuthorById</selectByPk>
+        <update>updateAuthor</update>
+        <delete>deleteAuthor</delete>
+        <insert>newAuthor</insert>
+        <requetor>requetorAuthor</requetor>
+        <column fieldName="author" label="Auteur" preferredSize="150"/>
+        <column fieldName="biography" label="Biographie" preferredSize="100"/>
+    </preference>
+
 </preferenceList>
