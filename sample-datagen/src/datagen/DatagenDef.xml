@@ -5,9 +5,19 @@
         <role id="utilisateur">
             <include>*</include>
 
-            <include>com.agf.broadcast.gui.plugin.BroadcastGuiPlugin#BroadcastSelectorsAction</include>
+            <include>getStructure</include>
+
+            <include>net.codjo.broadcast.gui.plugin.BroadcastGuiPlugin#BroadcastSelectorsAction</include>
             <include>(new|delete|update)BroadcastSelector</include>
-            <include>com.agf.broadcast.gui.selector.DeleteSelectorAction</include>
+            <include>net.codjo.broadcast.gui.selector.DeleteSelectorAction</include>
+
+            <include>net.codjo.control.gui.plugin.ControlGuiPlugin#Album</include>
+            <include>net.codjo.control.gui.util.ValidationAction</include>
+            <include>net.codjo.control.gui.util.ForceAction</include>
+            <include>selectQUserAlbumById</include>
+            <include>selectAllQUserAlbumWithParameters</include>
+            <include>updateQUserAlbum</include>
+            <include>deleteQUserAlbum</include>
 
             <exclude>administrate-user</exclude>
             <exclude>net.codjo.workflow.gui.plugin.WorkflowAuditGuiPlugin#WorkflowLogAction</exclude>

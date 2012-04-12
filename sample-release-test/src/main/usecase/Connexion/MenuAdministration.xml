@@ -10,6 +10,37 @@
         <group name="Grisage du menu pour les utilisateurs standards (rôle utilisateur)">
             <assertEnabled menu="Administration" expected="false"/>
             <assertEnabled menu="Administration:Administration utilisateur" expected="false"/>
+
+            <assertEnabled menu="Interfaces" expected="true"/>
+            <assertEnabled menu="Interfaces:Paramètres" expected="true"/>
+
+            <assertEnabled menu="Interfaces:Paramètres:Imports" expected="true"/>
+            <click menu="Interfaces:Paramètres:Imports"/>
+            <assertFrame title="Fichiers / Sections"/>
+            <closeFrame title="Fichiers / Sections"/>
+
+            <assertEnabled menu="Interfaces:Paramètres:Système source" expected="true"/>
+            <click menu="Interfaces:Paramètres:Système source"/>
+            <assertFrame title="Système"/>
+            <closeFrame title="Système"/>
+
+            <assertEnabled menu="Interfaces:Paramètres:Export:Sélecteurs génériques" expected="true"/>
+            <click menu="Interfaces:Paramètres:Export:Sélecteurs génériques"/>
+            <assertFrame title="Sélecteurs génériques"/>
+            <closeFrame title="Sélecteurs génériques"/>
+            <assertEnabled menu="Interfaces:Paramètres:Export:Fichiers et Sections" expected="true"/>
+            <click menu="Interfaces:Paramètres:Export:Fichiers et Sections"/>
+            <assertFrame title="Fichiers / Sections"/>
+            <closeFrame title="Fichiers / Sections"/>
+            <assertEnabled menu="Interfaces:Paramètres:Export:Sections/Colonnes" expected="true"/>
+            <click menu="Interfaces:Paramètres:Export:Sections/Colonnes"/>
+            <assertFrame title="Sections / Colonnes"/>
+            <closeFrame title="Sections / Colonnes"/>
+
+            <assertEnabled menu="Quarantaine:Album" expected="true"/>
+            <click menu="Quarantaine:Album"/>
+            <assertFrame title="Quarantaine des albums"/>
+            <closeFrame title="Quarantaine des albums"/>
         </group>
     </gui-test>
 
