@@ -26,13 +26,16 @@ public class BookGuiPreferences extends AbstractSelectorGuiPreference {
 
     @Override
     protected GuiField[] getComputedFields(String aComputedTableName) {
-        return new GuiField[0];
+        return new GuiField[]{
+              new GuiField(aComputedTableName, "CTE_STRING", "Constante chaîne")
+        };
     }
 
 
     @Override
     protected void initJoinKeys() {
         addJoinKey("AP_BOOK");
+        addJoinKey(getComputedTableName());
     }
 }
 

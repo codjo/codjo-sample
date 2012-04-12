@@ -32,17 +32,22 @@ public class BookPreferences extends Preferences {
 
     @Override
     protected ComputedField[] initComputedFields() {
-        return new ComputedField[]{new ConstantField("CTE_STRING", Types.VARCHAR, "CTE_STRING VARCHAR(1)", null)};
+        return new ComputedField[]{new ConstantField("CTE_STRING", Types.VARCHAR, "CTE_STRING VARCHAR(15)", null)
+        };
     }
 
 
     @Override
     protected void initJoinKeys() {
+        addJoinKeys(INNER_JOIN, getComputedTableName(), getSelectionTableName(),
+                    new String[][]{
+                          {"SELECTION_ID", "SELECTION_ID", "="}
+                    });
         addJoinKeys(RIGHT_JOIN, "AP_BOOK", getSelectionTableName(),
-                            new String[][]{
-                                  {"TITLE", "TITLE", "="},
-                                  {"AUTHOR", "AUTHOR", "="}
-                            });
+                    new String[][]{
+                          {"TITLE", "TITLE", "="},
+                          {"AUTHOR", "AUTHOR", "="}
+                    });
     }
 
 
@@ -89,7 +94,8 @@ public class BookPreferences extends Preferences {
 
         private void createSelectionTable(Connection connection, String tableName) throws SQLException {
             createTempTable(connection, tableName,
-                            " TITLE      varchar(255)  not null,"
+                            " SELECTION_ID         numeric(18)   identity, "
+                            + " TITLE      varchar(255)  not null,"
                             + " AUTHOR      varchar(150)  not null ");
         }
     }
