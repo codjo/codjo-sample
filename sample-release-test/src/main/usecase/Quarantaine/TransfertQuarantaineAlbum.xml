@@ -30,8 +30,8 @@
                 <click name="ButtonPanelGui.okButton"/>
 
                 <click label="Envoyer"/>
-                <!--<pause></pause>-->
                 <assertFrame title="Erreur" closed="true"/>
+                <assertListSize name="requestTable" expected="2"/>
             </group>
         </group>
     </gui-test>

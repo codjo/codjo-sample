@@ -56,7 +56,7 @@
                 <ERROR_LOG value="Author unknown."/>
                 <SOURCE_SYSTEM value="codjo"/>
             </row>
-            <row>
+            <row id="noAuthor">
                 <QUARANTINE_ID value="30"/>
                 <TITLE value="Le Dahlia noir"/>
                 <AUTHOR/>
@@ -65,7 +65,7 @@
                 <ERROR_LOG value="Author is mandatory."/>
                 <SOURCE_SYSTEM value="codjo"/>
             </row>
-            <row>
+            <row id="authorUnknown">
                 <QUARANTINE_ID value="40"/>
                 <TITLE value="Les piliers de la Terre 2"/>
                 <AUTHOR value="John Doe"/>
@@ -99,5 +99,10 @@
                 <PUBLICATION_YEAR value="1948-01-01"/>
             </row>
         </AP_ALBUM>
+        <Q_AP_USER_ALBUM>
+            <copy row="noAuthor"/>
+            <copy row="authorUnknown"/>
+        </Q_AP_USER_ALBUM>
+        <Q_AP_ALBUM/>
     </output>
 </story>
