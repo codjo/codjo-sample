@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<story id="Import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="file:C:/dev/platform/cache/xsd/sample-story.xsd">
+    <input>
+        <PM_SOURCE_SYSTEM>
+            <row>
+                <SOURCE_SYSTEM value="codjo"/>
+                <DATE_FORMAT value="yyyyMM"/>
+                <DECIMAL_SEPARATOR value="."/>
+            </row>
+        </PM_SOURCE_SYSTEM>
+        <PM_IMPORT_SETTINGS>
+            <row>
+                <IMPORT_SETTINGS_ID value="1"/>
+                <FILE_TYPE value="Albums"/>
+                <SOURCE_SYSTEM value="codjo"/>
+                <COMMENT value="Import d'albums"/>
+                <FIXED_LENGTH value="false"/>
+                <FIELD_SEPARATOR value=";"/>
+                <HEADER_LINE value="true"/>
+                <DEST_TABLE value="Q_AP_ALBUM"/>
+                <FILTER_EXPRESSION value="dddd"/>
+            </row>
+        </PM_IMPORT_SETTINGS>
+
+        <PM_FIELD_IMPORT_SETTINGS>
+            <row>
+                <IMPORT_SETTINGS_ID value="1"/>
+                <POSITION value="1"/>
+                <DB_DESTINATION_FIELD_NAME value="TITLE"/>
+                <DESTINATION_FIELD_TYPE value="S"/>
+            </row>
+            <row>
+                <IMPORT_SETTINGS_ID value="1"/>
+                <POSITION value="2"/>
+                <DB_DESTINATION_FIELD_NAME value="AUTHOR"/>
+                <DESTINATION_FIELD_TYPE value="S"/>
+            </row>
+            <row>
+                <IMPORT_SETTINGS_ID value="1"/>
+                <POSITION value="3"/>
+                <DB_DESTINATION_FIELD_NAME value="PUBLICATION_YEAR"/>
+                <DESTINATION_FIELD_TYPE value="S"/>
+            </row>
+        </PM_FIELD_IMPORT_SETTINGS>
+
+        <REF_AUTHOR>
+            <row>
+                <AUTHOR value="Nine Inch Nails"/>
+                <BIOGRAPHY value="1988?present"/>
+            </row>
+            <row>
+                <AUTHOR value="Radiohead"/>
+                <BIOGRAPHY value="1985?present"/>
+            </row>
+            <row>
+                <AUTHOR value="Archive"/>
+                <BIOGRAPHY value="1994?present"/>
+            </row>
+        </REF_AUTHOR>
+        <AP_ALBUM>
+            <row id="initialAlbum">
+                <TITLE value="A title"/>
+                <AUTHOR value="Nine Inch Nails"/>
+            </row>
+        </AP_ALBUM>
+    </input>
+    <output>
+        <AP_ALBUM>
+            <row inheritId="initialAlbum"/>
+            <row>
+                <TITLE value="Further down the spiral"/>
+                <AUTHOR value="Nine Inch Nails"/>
+                <PUBLICATION_YEAR value="1995-01"/>
+            </row>
+            <row>
+                <TITLE value="You All Look the Same to Me"/>
+                <AUTHOR value="Archive"/>
+                <PUBLICATION_YEAR value="2002-01"/>
+            </row>
+            <row>
+                <TITLE value="Pablo Honey"/>
+                <AUTHOR value="Radiohead"/>
+                <PUBLICATION_YEAR value="1993-01"/>
+            </row>
+        </AP_ALBUM>
+    </output>
+</story>

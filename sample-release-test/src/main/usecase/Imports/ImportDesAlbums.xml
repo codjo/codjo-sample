@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<release-test name="ImportDesAlbums"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="http://test-release.xsd"
+              enabled="false">
+
+    <description>Test d'import des albums</description>
+
+    <security-model user="${testEnvironment.user}" roles="utilisateur"/>
+
+    <tokio-load id="db.load" file="ImportDesAlbums.tokio"/>
+    <tokio-set-db id="db.setdb" refId="db.load" scenario="Import"/>
+
+    <copy-to-inbox file="Albums.txt"/>
+
+    <batch-import initiator="sample" file="Albums.txt"/>
+
+    <tokio-assert refId="db.setdb" allTables="true"/>
+
+</release-test>

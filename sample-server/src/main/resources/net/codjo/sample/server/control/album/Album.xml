@@ -6,19 +6,17 @@
     <description>Plan d'intégration IHM de la table AP_ALBUM.</description>
     <dictionary>
         <variable name="control.table" value="CTRL_ALBUM"/>
-        <variable name="quarantine.table" value="Q_AP_ALBUM"/>
-        <variable name="final.table" value="AP_ALBUM"/>
         <variable name="line.ok" value="ERROR_TYPE &lt;= 0"/>
     </dictionary>
 
     <!-- Chargement des steps abstraits génériques -->
     &genericSteps;
 
-    <shipment from="$quarantine.table$" to="$control.table$">
-        <from-pk-field>QUARANTINE_ID</from-pk-field>
-        <select-where-clause>$line.ok$</select-where-clause>
-    </shipment>
+    <entity>
+        <class>net.codjo.sample.Album</class>
+    </entity>
 
+    <shipment to="$control.table$"/>
     <cleanup type="delete"/>
 
     <plans>
@@ -43,46 +41,4 @@
             </step>
         </plan>
     </plans>
-    <dispatch>
-        <step id="updateQuarantineBadStatus" priority="2" type="dispatch">
-            <description>Mise à jour du statut dans la table des quarantaine des lignes en erreur.</description>
-            <test>NONE</test>
-            <query>
-                <![CDATA[
-                    MERGE INTO $quarantine.table$ quarantine
-                    USING $control.table$ ctrl
-                    ON (quarantine.QUARANTINE_ID = ctrl.QUARANTINE_ID)
-                    WHEN MATCHED THEN
-                      UPDATE SET  quarantine.ERROR_TYPE = ctrl.ERROR_TYPE,
-                                  quarantine.ERROR_LOG = ctrl.ERROR_LOG
-                      where ctrl.ERROR_TYPE > 0
-                    ]]>
-            </query>
-        </step>
-        <step id="deleteQuarantineOk" priority="4" type="dispatch">
-            <description>Suppression des lignes qui ne sont pas en erreur dans la table des quarantaine.
-            </description>
-            <test>NONE</test>
-            <query>
-                <![CDATA[
-                    delete from $quarantine.table$ quarantine
-                    where quarantine.QUARANTINE_ID in (select ctrl.QUARANTINE_ID
-                                                       from $control.table$ ctrl
-                                                       where ctrl.$line.ok$)
-                    ]]>
-            </query>
-        </step>
-        <step id="MergeAlbum" priority="500" type="dispatch">
-            <description>Merge Album.</description>
-            <test>NONE</test>
-            <query>
-                <![CDATA[
-                insert into AP_ALBUM (TITLE, AUTHOR, PUBLICATION_YEAR)
-                select CTRL_ALBUM.TITLE, CTRL_ALBUM.AUTHOR, to_timestamp(CTRL_ALBUM.PUBLICATION_YEAR)
-                from CTRL_ALBUM
-                where $line.ok$
-                ]]>
-            </query>
-        </step>
-    </dispatch>
 </integration-plan>
