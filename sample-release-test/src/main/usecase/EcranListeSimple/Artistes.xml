@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <release-test name="TransfertQuarantaineAlbum"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:noNamespaceSchemaLocation="http://test-release.xsd"
-      enabled="false">
+              xsi:noNamespaceSchemaLocation="http://test-release.xsd">
 
     <description>Test gestion des artistes</description>
 
@@ -11,21 +10,26 @@
 
     <security-model user="${testEnvironment.user}" roles="utilisateur"/>
 
+
     <gui-test>
         <group>
             <group name="Author manipulation">
                 <click menu="Ref:Artistes"/>
                 <assertFrame title="Artistes"/>
                 <assertListSize name="AuthorList" expected="4"/>
+                <assertTable name="AuthorList" row="2" column="Auteur" mode="display" expected="J.R.R. Tolkien"/>
+
                 <click name="AuthorList.AddAction"/>
                 <setValue name="author" value="Dan Simmons"/>
                 <setValue name="biography" value="1948-present"/>
                 <click name="ButtonPanelGui.okButton"/>
                 <assertListSize name="AuthorList" expected="5"/>
 
-                <assertTable name="AuthorList" row="2" column="1" expected="J.R.R. Tolkien"/>
+                <assertTable name="AuthorList" row="2" column="0" expected="J.R.R. Tolkien"/>
                 <select name="AuthorList" row="2"/>
-                <click name="ButtonPanelGui.deleteButton"/>
+                <click name="AuthorList.DeleteAction"/>
+                <assertFrame title="Confirmation de suppression"/>
+                <click label="Oui"/>
                 <assertListSize name="AuthorList" expected="4"/>
             </group>
         </group>

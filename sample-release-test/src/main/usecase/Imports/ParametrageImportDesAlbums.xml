@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <release-test name="ExportDesLivres"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:noNamespaceSchemaLocation="http://test-release.xsd"
-      enabled="false">
+              xsi:noNamespaceSchemaLocation="http://test-release.xsd">
 
-    <description>Test du paramétrage d'export des livres</description>
+    <description>Test du paramétrage d'import des artistes</description>
 
     <tokio-load id="db.load" file="ParametrageImportDesAlbums.tokio"/>
     <tokio-set-db id="db.setdb" refId="db.load" scenario="Import"/>
@@ -16,89 +15,11 @@
             <group name="verification chargement parametrage">
                 <click menu="Interfaces:Paramètres:Imports"/>
                 <assertFrame title="Fichiers / Sections"/>
-                <assertListSize name="BroadcastFilesWindow" expected="1"/>
-                <select name="BroadcastFilesWindow" row="0"/>
-                <assertListSize name="BroadcastFileContentsWindow" expected="2"/>
+                <assertListSize name="ImportSettingsWindow" expected="1"/>
+                <assertTable name="ImportSettingsWindow" expected="Q_AP_ALBUM" row="0" column="0"/>
+                <select name="ImportSettingsWindow" row="0"/>
+                <assertListSize name="FieldImportWindow" expected="3"/>
                 <closeFrame title="Fichiers / Sections"/>
-            </group>
-            <group name="creation fichier">
-                <click menu="Interfaces:Paramètres:Export:Fichiers et Sections"/>
-                <assertFrame title="Fichiers / Sections"/>
-                <click name="BroadcastFilesWindow.AddAction"/>
-                <setValue name="fileName" value="book.txt"/>
-                <setValue name="destinationSystem" value="lib"/>
-                <click name="ButtonPanelGui.okButton"/>
-                <assertListSize name="BroadcastFilesWindow" expected="2"/>
-                <closeFrame title="Fichiers / Sections"/>
-            </group>
-
-            <group name="creation sections">
-                <click menu="Interfaces:Paramètres:Export:Sections/Colonnes"/>
-                <assertFrame title="Sections / Colonnes"/>
-                <assertListSize name="BroadcastSectionsWindow" expected="2"/>
-                <assertTable name="BroadcastSectionsWindow" expected="James Elroy" row="0" column="1"/>
-                <assertTable name="BroadcastSectionsWindow" expected="Ken Follett" row="1" column="1"/>
-                <select name="BroadcastSectionsWindow" row="0"/>
-                <assertListSize name="BroadcastColumnsWindow" expected="3"/>
-                <assertTable name="BroadcastColumnsWindow" expected="TITLE" row="0" column="2"/>
-                <assertTable name="BroadcastColumnsWindow" expected="AUTHOR" row="1" column="2"/>
-                <assertTable name="BroadcastColumnsWindow" expected="PUBLICATION_YEAR" row="2" column="2"/>
-
-                <click name="BroadcastSectionsWindow.AddAction"/>
-                <setValue name="sectionName" value="sec1"/>
-                <setValue name="family" value="BOOKS"/>
-                <setValue name="selectionId" value="1"/>
-                <setValue name="decimalSeparator" value=","/>
-                <click name="ButtonPanelGui.okButton"/>
-                <click name="BroadcastSectionsWindow.AddAction"/>
-                <setValue name="sectionName" value="sec2"/>
-                <setValue name="family" value="BOOKS"/>
-                <setValue name="selectionId" value="1"/>
-                <click name="ButtonPanelGui.okButton"/>
-
-                <group name="creation de colonnes">
-                    <select name="BroadcastSectionsWindow" row="2"/>
-                    <click name="BroadcastColumnsWindow.AddAction"/>
-                    <setValue name="columnName" value="ch"/>
-                    <setValue name="columnNumber" value=""/>
-                    <setValue name="columnName" value="champ1"/>
-                    <setValue name="columnNumber" value="1"/>
-                    <click name="ButtonPanelGui.okButton"/>
-                    <click name="BroadcastColumnsWindow.AddAction"/>
-                    <setValue name="columnName" value="Champ2"/>
-                    <setValue name="columnNumber" value="2"/>
-                    <click name="ButtonPanelGui.okButton"/>
-
-                    <assertTable name="BroadcastSectionsWindow" expected="sec1" row="2" column="1"/>
-                    <assertTable name="BroadcastSectionsWindow" expected="sec2" row="3" column="1"/>
-                    <assertListSize name="BroadcastColumnsWindow" expected="2"/>
-                    <assertTable name="BroadcastColumnsWindow" expected="champ1" row="0" column="3"/>
-                    <assertTable name="BroadcastColumnsWindow" expected="Champ2" row="1" column="3"/>
-                </group>
-
-                <group name="suppression section">
-                    <assertListSize name="BroadcastSectionsWindow" expected="4"/>
-                    <select name="BroadcastSectionsWindow" row="0"/>
-                    <click name="BroadcastSectionsWindow.DeleteAction"/>
-                    <click label="Oui"/>
-                    <assertListSize name="BroadcastSectionsWindow" expected="3"/>
-                </group>
-            </group>
-            <group name="association fichier/section">
-                <click menu="Interfaces:Paramètres:Export:Fichiers et Sections"/>
-                <assertTable name="BroadcastFilesWindow" expected="book.txt" row="1" column="1"/>
-                <select name="BroadcastFilesWindow" row="1"/>
-                <assertListSize name="BroadcastFileContentsWindow" expected="0"/>
-                <click name="BroadcastFileContentsWindow.AddAction"/>
-                <setValue name="sectionId" value="2"/>
-                <setValue name="sectionPosition" value="1"/>
-                <click name="ButtonPanelGui.okButton"/>
-            </group>
-            <group name="suppression fichier">
-                <assertListSize name="BroadcastFileContentsWindow" expected="1"/>
-                <select name="BroadcastFilesWindow" row="0"/>
-                <click name="BroadcastFilesWindow.DeleteAction"/>
-                <click label="Oui"/>
             </group>
         </group>
     </gui-test>
