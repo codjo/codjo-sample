@@ -19,6 +19,8 @@ revoke all on AP_ALBUM                              to Utilisateur, Maintenance,
 revoke all on Q_AP_ALBUM                            to Utilisateur, Maintenance, Consultation
 revoke all on Q_AP_USER_ALBUM                       to Utilisateur, Maintenance, Consultation
 revoke all on CTRL_ALBUM                            to Utilisateur, Maintenance, Consultation
+revoke all on PM_REFERENTIAL_FAMILY                 to Utilisateur, Maintenance, Consultation
+revoke all on PM_REF_FAMILY_REF_ASSO                to Utilisateur, Maintenance, Consultation
 go
 /**************************/
 /*  Droits sur les vues  */

@@ -16,6 +16,7 @@ import net.codjo.mad.gui.base.GuiConfiguration;
 import net.codjo.mad.gui.base.MadGuiCore;
 import net.codjo.mad.gui.plugin.MadGuiPlugin;
 import net.codjo.mad.gui.util.ApplicationData;
+import net.codjo.referential.gui.plugin.ReferentialGuiPlugin;
 import net.codjo.sample.gui.broadcast.BookGuiPreferences;
 import net.codjo.security.client.plugin.SecurityClientPlugin;
 import net.codjo.security.gui.plugin.SecurityGuiPlugin;
@@ -43,6 +44,7 @@ public class SampleGui {
         guiClient.addPlugin(ImportGuiPlugin.class);
         guiClient.addPlugin(ControlGuiPlugin.class);
         guiClient.addPlugin(BroadcastGuiPlugin.class);
+        guiClient.addPlugin(ReferentialGuiPlugin.class);
 
         guiClient.addPlugin(SampleGuiPlugin.class);
 

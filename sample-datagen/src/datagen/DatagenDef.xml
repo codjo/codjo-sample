@@ -25,6 +25,8 @@
             <include>updateAuthor</include>
             <include>deleteAuthor</include>
             <include>newAuthor</include>
+            <include>com.agf.broadcast.gui.selector.DeleteSelectorAction</include>
+            <include>net.codjo.referential.gui.plugin.ReferentialGuiPlugin#referential</include>
 
             <exclude>administrate-user</exclude>
             <exclude>net.codjo.workflow.gui.plugin.WorkflowAuditGuiPlugin#WorkflowLogAction</exclude>
@@ -42,6 +44,12 @@
         </role>
         <role id="administrateur">
             <include>*</include>
+            <include>net.codjo.referential.gui.plugin.ReferentialGuiPlugin#referential</include>
+            <include-handler entity="/data/entity[@name='net.codjo.referential.server.PmReferentialFamily']"
+                             pattern="(new|update|delete|select)*"/>
+            <include-handler entity="/data/entity[@name='net.codjo.referential.server.PmRefFamilyRefAsso']"
+                             pattern="(new|update|delete|select)*"/>
+
         </role>
     </roles>
 

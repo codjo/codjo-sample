@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<release-test name="ReferentialFamily"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="http://test-release.xsd">
+
+    <description>Test de la gestion des familles de referentiel</description>
+
+    <tokio-load id="db.load" file="ReferentialFamily.tokio"/>
+    <tokio-set-db id="db.setdb" refId="db.load" scenario="ReferentialFamilyDelete"/>
+
+    <security-model user="${testEnvironment.user}" roles="administrateur"/>
+
+    <gui-test>
+        <group>
+            <group name="Ouverture de l'ihm de gestion des familles de référentiels">
+                <click menu="Référentiel:Gestion des familles de référentiels"/>
+                <click name="PmReferentialFamily.AddAction"/>
+                <setValue name="familyLabel" value="FAMILLE_ONE"/>
+                <click name="ButtonPanelGui.okButton"/>
+
+                <assertTable name="PmReferentialFamily" expected="FAMILLE_ONE" row="0" column="0"/>
+
+                <select name="PmReferentialFamily" row="0"/>
+                <click name="PmReferentialFamily.DeleteAction"/>
+                <assertFrame title="Confirmation de suppression"/>
+                <click name="OptionPane.button" label="Oui"/>
+                <assertFrame title="Gestion des familles de référentiels"/>
+                <assertListSize expected="0" name="PmReferentialFamily"/>
+            </group>
+        </group>
+    </gui-test>
+
+    <tokio-assert refId="db.setdb" allTables="true"/>
+</release-test>

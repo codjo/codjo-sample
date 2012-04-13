@@ -35,6 +35,10 @@ revoke all on Q_AP_USER_ALBUM                       from APP_USER
 /
 revoke all on CTRL_ALBUM                            from APP_USER
 /
+revoke all on PM_REF_FAMILY_REF_ASSO                from APP_USER
+/
+revoke all on PM_REFERENTIAL_FAMILY                 from APP_USER
+/
 /**************************/
 /*  Droits sur les vues  */
 /**************************/

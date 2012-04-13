@@ -46,4 +46,9 @@
             <menu plugin="net.codjo.workflow.gui.plugin.WorkflowGuiPlugin" actionId="ConsoleAction"/>
         </menu>
     </menu>
+    <menu>
+        <name>Référentiel</name>
+        <menu plugin="net.codjo.referential.gui.plugin.ReferentialGuiPlugin" actionId="referential"/>
+        <menu plugin="net.codjo.referential.gui.plugin.ReferentialGuiPlugin" actionId="referentialFamily"/>
+    </menu>
 </menubar>
