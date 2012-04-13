@@ -10,14 +10,13 @@
 
     <security-model user="${testEnvironment.user}" roles="utilisateur"/>
 
-
     <gui-test>
         <group>
             <group name="Author manipulation">
                 <click menu="Ref:Artistes"/>
                 <assertFrame title="Artistes"/>
                 <assertListSize name="AuthorList" expected="4"/>
-                <assertTable name="AuthorList" row="2" column="Auteur" mode="display" expected="J.R.R. Tolkien"/>
+                <assertTable name="AuthorList" row="1" column="Auteur" mode="display" expected="J.R.R. Tolkien"/>
 
                 <click name="AuthorList.AddAction"/>
                 <setValue name="author" value="Dan Simmons"/>

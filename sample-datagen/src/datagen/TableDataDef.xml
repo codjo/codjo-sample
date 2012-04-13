@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="http://datagen.xsd">
-    <entity name="net.codjo.sample.Book" table="AP_BOOK">
+    <entity name="net.codjo.sample.Book" table="AP_BOOK" order-clause="TITLE, AUTHOR">
         <description>Une table contenant des livres</description>
 
         <feature>
@@ -45,7 +45,7 @@
         </properties>
     </entity>
 
-    <entity name="net.codjo.sample.Author" table="REF_AUTHOR">
+    <entity name="net.codjo.sample.Author" table="REF_AUTHOR" order-clause="AUTHOR">
         <description>Author Referential</description>
 
         <feature>
@@ -79,7 +79,7 @@
         </properties>
     </entity>
 
-    <entity name="net.codjo.sample.Album" table="AP_ALBUM">
+    <entity name="net.codjo.sample.Album" table="AP_ALBUM" order-clause="TITLE, AUTHOR">
         <description>Une table contenant des albums de musique</description>
 
         <feature>
@@ -123,7 +123,7 @@
         </properties>
     </entity>
 
-    <entity name="net.codjo.sample.QAlbum" table="Q_AP_ALBUM" type="quarantine">
+    <entity name="net.codjo.sample.QAlbum" table="Q_AP_ALBUM" type="quarantine" order-clause="QUARANTINE_ID">
         <description>Quarantaine des albums de musique</description>
 
         <feature>
