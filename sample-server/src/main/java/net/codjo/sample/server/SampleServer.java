@@ -14,6 +14,7 @@ import net.codjo.security.server.plugin.SecurityServerPlugin;
 import net.codjo.sql.server.plugin.JdbcServerPlugin;
 import net.codjo.workflow.server.plugin.WorkflowAuditServerPlugin;
 import net.codjo.workflow.server.plugin.WorkflowServerPlugin;
+import server.plugin.ReferentialServerPlugin;
 
 public class SampleServer {
     private SampleServer() {
@@ -32,6 +33,7 @@ public class SampleServer {
         server.addPlugin(ImportServerPlugin.class);
         server.addPlugin(ControlServerPlugin.class);
         server.addPlugin(BroadcastServerPlugin.class);
+        server.addPlugin(ReferentialServerPlugin.class);
 
         server.addPlugin(SampleServerPlugin.class);
 
