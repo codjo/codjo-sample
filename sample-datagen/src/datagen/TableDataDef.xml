@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="http://datagen.xsd">
+
+    <entity name="net.codjo.sample.WithIdentity" table="REF_WITH_IDENTITY">
+        <description>Une table avec clé identity</description>
+
+        <feature>
+            <sql/>
+            <bean/>
+            <castor/>
+            <doc-structure/>
+            <handler-new id="new${className}"/>
+            <handler-update id="update${className}"/>
+            <handler-select id="selectAll${className}" type="All"/>
+            <handler-select id="select${className}ById" type="By_Primary-Key"/>
+            <handler-delete id="delete${className}ById"/>
+            <sql-constraint/>
+            <sql-index>
+                <idx type="primary-key" name-prefix="X1_" clustered="false"/>
+            </sql-index>
+        </feature>
+
+        <primary-key key-generator="IDENTITY">
+            <field name="idTypeIdentity"/>
+        </primary-key>
+
+        <properties>
+            <field name="idTypeIdentity" type="integer">
+                <description>Identifiant de la ligne</description>
+                <sql type="integer" required="true" identity="true"/>
+            </field>
+            <field name="name" type="string">
+                <description>Nom</description>
+                <sql type="varchar" precision="150" required="true"/>
+            </field>
+        </properties>
+    </entity>
+
+
+
     <entity name="net.codjo.sample.Book" table="AP_BOOK" order-clause="TITLE, AUTHOR">
         <description>Une table contenant des livres</description>
 

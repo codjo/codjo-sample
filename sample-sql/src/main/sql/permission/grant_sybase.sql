@@ -22,6 +22,7 @@ grant select, insert, delete, update, references on Q_AP_USER_ALBUM             
 grant select, insert, delete, update, references on CTRL_ALBUM                      to Utilisateur, Maintenance
 grant select, insert, delete, update, references on PM_REF_FAMILY_REF_ASSO          to Maintenance,Utilisateur
 grant select, insert, delete, update, references on PM_REFERENTIAL_FAMILY           to Maintenance,Utilisateur
+grant select, insert, delete, update, references on REF_WITH_IDENTITY               to Maintenance,Utilisateur
 go
 
 /**************************/
