@@ -19,7 +19,7 @@ public class BookPreferences extends Preferences {
 
 
     public BookPreferences() {
-        super(FAMILY, "AP_BOOK", "#ALL_BOOK_SEL", "#COMPUTED_TAB");
+        super(FAMILY, "AP_BOOK", "APP_USER.TMP_BOOK_SEL", "APP_USER.TMP_COMPUTED_TAB");
     }
 
 
@@ -94,7 +94,8 @@ public class BookPreferences extends Preferences {
 
         private void createSelectionTable(Connection connection, String tableName) throws SQLException {
             createTempTable(connection, tableName,
-                            " SELECTION_ID         numeric(18)   identity, "
+//                            " SELECTION_ID         numeric(18)   identity, "
+                            " SELECTION_ID         numeric(18)       , "
                             + " TITLE      varchar(255)  not null,"
                             + " AUTHOR      varchar(150)  not null ");
         }

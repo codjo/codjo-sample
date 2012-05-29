@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <release-test name="ExportDesLivres"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-              xsi:noNamespaceSchemaLocation="http://test-release.xsd"
-      enabled="false">
+              xsi:noNamespaceSchemaLocation="http://test-release.xsd">
 
     <description>Test d'export des livres</description>
 
