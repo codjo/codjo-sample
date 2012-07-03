@@ -21,14 +21,14 @@
             </sql-index>
         </feature>
 
-        <primary-key key-generator="IDENTITY">
+        <primary-key key-generator="ORACLE_SEQUENCE">
             <field name="idTypeIdentity"/>
         </primary-key>
 
         <properties>
             <field name="idTypeIdentity" type="integer">
                 <description>Identifiant de la ligne</description>
-                <sql type="integer" required="true" identity="true"/>
+                <sql type="numeric" precision="23" identity="true"/>
             </field>
             <field name="name" type="string">
                 <description>Nom</description>
