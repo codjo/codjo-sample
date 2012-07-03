@@ -1,5 +1,5 @@
-Titre;Auteur;Année de publication
-Le Dahlia noir;James Ellroy;198701
-Les piliers de la Terre;Ken Follett;199001
+Titre;Auteur;Année de publication;Test calcul
+Le Dahlia noir;James Ellroy;198701;TOPOLINO
+Les piliers de la Terre;Ken Follett;199001;TOPOLINO
 Le Dahlia noir;James Ellroy;198701
 Les piliers de la Terre;Ken Follett;199001
