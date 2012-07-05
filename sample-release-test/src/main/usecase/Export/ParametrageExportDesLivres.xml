@@ -58,12 +58,18 @@
                 <group name="creation de colonnes">
                     <select name="BroadcastSectionsWindow" row="2"/>
                     <click name="BroadcastColumnsWindow.AddAction"/>
+                    <assertFrame title="Détail de la table"/>
+                    <select name="dbTableName" label="Une table contenant des livres"/>
+                    <select name="dbFieldName" label="Année de publication"/>
                     <setValue name="columnName" value="ch"/>
                     <setValue name="columnNumber" value=""/>
                     <setValue name="columnName" value="champ1"/>
                     <setValue name="columnNumber" value="1"/>
                     <click name="ButtonPanelGui.okButton"/>
+                    <assertFrame title="Détail de la table" closed="true"/>
                     <click name="BroadcastColumnsWindow.AddAction"/>
+                    <select name="dbTableName" label="Calcul"/>
+                    <select name="dbFieldName" label="Constante chaîne"/>
                     <setValue name="columnName" value="Champ2"/>
                     <setValue name="columnNumber" value="2"/>
                     <click name="ButtonPanelGui.okButton"/>
