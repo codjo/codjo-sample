@@ -166,7 +166,7 @@
                 <COLUMN_HEADER value="false"/>
             </row>
         </PM_BROADCAST_FILE_CONTENTS>
-        <PM_BROADCAST_COLUMNS>
+        <PM_BROADCAST_COLUMNS orderClause="COLUMNS_ID">
             <row>
                 <RIGHT_COLUMN_PADDING value="true"/>
                 <DB_FIELD_NAME value="TITLE"/>
@@ -198,8 +198,8 @@
             <row>
                 <COLUMNS_ID value="7"/>
                 <SECTION_ID value="3"/>
-                <DB_TABLE_NAME value="AP_BOOK"/>
-                <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
+                <DB_TABLE_NAME value="$databaseApplicationUser$.TMP_COMPUTED_TAB"/>
+                <DB_FIELD_NAME value="CTE_STRING"/>
                 <COLUMN_NAME value="champ1"/>
                 <COLUMN_NUMBER value="1"/>
                 <RIGHT_COLUMN_PADDING value="false"/>
@@ -207,8 +207,8 @@
             <row>
                 <COLUMNS_ID value="8"/>
                 <SECTION_ID value="3"/>
-                <DB_TABLE_NAME value="AP_BOOK"/>
-                <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
+                <DB_TABLE_NAME value="$databaseApplicationUser$.TMP_COMPUTED_TAB"/>
+                <DB_FIELD_NAME value="CTE_STRING"/>
                 <COLUMN_NAME value="Champ2"/>
                 <COLUMN_NUMBER value="2"/>
                 <RIGHT_COLUMN_PADDING value="false"/>

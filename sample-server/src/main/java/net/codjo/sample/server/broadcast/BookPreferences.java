@@ -19,7 +19,10 @@ public class BookPreferences extends Preferences {
 
 
     public BookPreferences() {
-        super(FAMILY, "AP_BOOK", "#ALL_BOOK_SEL", "#COMPUTED_TAB");
+        super(FAMILY,
+              "AP_BOOK",
+              "$databaseApplicationUser$.TMP_ALL_BOOK_SEL",
+              "$databaseApplicationUser$.TMP_COMPUTED_TAB");
     }
 
 
@@ -32,7 +35,7 @@ public class BookPreferences extends Preferences {
 
     @Override
     protected ComputedField[] initComputedFields() {
-        return new ComputedField[]{new ConstantField("CTE_STRING", Types.VARCHAR, "CTE_STRING VARCHAR(15)", null)
+        return new ComputedField[]{new ConstantField("CTE_STRING", Types.VARCHAR, "CTE_STRING VARCHAR(15)", "TOPOLINO")
         };
     }
 
@@ -60,7 +63,7 @@ public class BookPreferences extends Preferences {
 
 
     public static class BookSelector extends AbstractGenericSelector {
-        private static final String BASE_INSERT_QUERY = "insert into $selectionTable$ (TITLE, AUTHOR) ";
+        private static final String BASE_INSERT_QUERY = "insert into $selectionTable$ (SELECTION_ID, TITLE, AUTHOR) ";
 
 
         public BookSelector(int selectorId) {
@@ -74,8 +77,9 @@ public class BookPreferences extends Preferences {
                                              String selectionTableName,
                                              Date broadcastDate,
                                              int selectorId) throws SQLException {
-            createSelectionTable(connection, selectionTableName);
-            String selectorQuery = BASE_INSERT_QUERY + " select TITLE, AUTHOR from AP_BOOK";
+            createSelectionTable(connection, context.replaceVariables(selectionTableName));
+            String selectorQuery = BASE_INSERT_QUERY
+                                   + " select SEQ_BROADCAST_SELECTION.nextval ,TITLE, AUTHOR from AP_BOOK";
             executeQueryWithVariables(context, connection, selectorQuery);
         }
 
@@ -93,8 +97,9 @@ public class BookPreferences extends Preferences {
 
 
         private void createSelectionTable(Connection connection, String tableName) throws SQLException {
+            // TODO[Oracle Support] re-init de la sequence??
             createTempTable(connection, tableName,
-                            " SELECTION_ID         numeric(18)   identity, "
+                            " SELECTION_ID         numeric(18)   , "
                             + " TITLE      varchar(255)  not null,"
                             + " AUTHOR      varchar(150)  not null ");
         }
