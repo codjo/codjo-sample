@@ -21,8 +21,8 @@ public class BookPreferences extends Preferences {
     public BookPreferences() {
         super(FAMILY,
               "AP_BOOK",
-              "$databaseApplicationUser$.TMP_ALL_BOOK_SEL",
-              "$databaseApplicationUser$.TMP_COMPUTED_TAB");
+              "$dbApplicationUser$.TMP_ALL_BOOK_SEL",
+              "$dbApplicationUser$.TMP_COMPUTED_TAB");
     }
 
 

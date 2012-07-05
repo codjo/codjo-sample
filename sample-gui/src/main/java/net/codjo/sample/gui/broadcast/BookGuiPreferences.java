@@ -8,7 +8,7 @@ import net.codjo.mad.common.structure.StructureReader;
 public class BookGuiPreferences extends AbstractSelectorGuiPreference {
 
     public BookGuiPreferences(StructureReader structures) {
-        super("BOOKS", "$databaseApplicationUser$.TMP_COMPUTED_TAB", structures);
+        super("BOOKS", "$dbApplicationUser$.TMP_COMPUTED_TAB", structures);
     }
 
 

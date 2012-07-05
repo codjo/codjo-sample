@@ -123,7 +123,7 @@
                 <RIGHT_COLUMN_PADDING value="true"/>
                 <PADDING_CARACTER value=""/>
                 <DB_FIELD_NAME value="CTE_STRING"/>
-                <DB_TABLE_NAME value="$databaseApplicationUser$.TMP_COMPUTED_TAB"/>
+                <DB_TABLE_NAME value="$dbApplicationUser$.TMP_COMPUTED_TAB"/>
                 <COLUMNS_ID value="7"/>
                 <COLUMN_NUMBER value="70"/>
                 <COLUMN_NAME value="Test calcul"/>
