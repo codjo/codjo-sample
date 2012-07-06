@@ -136,7 +136,7 @@
             </row>
         </PM_BROADCAST_FILES>
 
-        <PM_BROADCAST_SECTION orderClause="SECTION_ID,SELECTION_ID">
+        <PM_BROADCAST_SECTION orderClause="SECTION_ID">
             <row>
                 <SECTION_NAME value="Ken Follett"/>
                 <FAMILY value="BOOKS"/>
@@ -166,40 +166,15 @@
                 <COLUMN_HEADER value="false"/>
             </row>
         </PM_BROADCAST_FILE_CONTENTS>
-        <PM_BROADCAST_COLUMNS orderClause="SECTION_ID,COLUMNS_ID,DB_TABLE_NAME">
-            <row>
-                <RIGHT_COLUMN_PADDING value="true"/>
-                <DB_FIELD_NAME value="TITLE"/>
-                <DB_TABLE_NAME value="AP_BOOK"/>
-                <COLUMNS_ID value="4"/>
-                <COLUMN_NUMBER value="40"/>
-                <COLUMN_NAME value="Titre"/>
-                <SECTION_ID value="2"/>
-            </row>
-            <row>
-                <RIGHT_COLUMN_PADDING value="false"/>
-                <DB_FIELD_NAME value="AUTHOR"/>
-                <DB_TABLE_NAME value="AP_BOOK"/>
-                <COLUMNS_ID value="5"/>
-                <COLUMN_NUMBER value="50"/>
-                <COLUMN_NAME value="Auteur"/>
-                <SECTION_ID value="2"/>
-            </row>
-            <row>
-                <RIGHT_COLUMN_PADDING value="true"/>
-                <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
-                <DB_TABLE_NAME value="AP_BOOK"/>
-                <COLUMN_DATE_FORMAT value="yyyyMM"/>
-                <COLUMNS_ID value="6"/>
-                <COLUMN_NUMBER value="60"/>
-                <COLUMN_NAME value="année de publication"/>
-                <SECTION_ID value="2"/>
-            </row>
+        <PM_BROADCAST_COLUMNS orderClause="COLUMNS_ID">
+            <copy row="columns_4"/>
+            <copy row="columns_5"/>
+            <copy row="columns_6"/>
             <row>
                 <COLUMNS_ID value="7"/>
                 <SECTION_ID value="3"/>
-                <DB_TABLE_NAME value="$dbApplicationUser$.TMP_COMPUTED_TAB"/>
-                <DB_FIELD_NAME value="CTE_STRING"/>
+                <DB_TABLE_NAME value="AP_BOOK"/>
+                <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
                 <COLUMN_NAME value="champ1"/>
                 <COLUMN_NUMBER value="1"/>
                 <RIGHT_COLUMN_PADDING value="false"/>
