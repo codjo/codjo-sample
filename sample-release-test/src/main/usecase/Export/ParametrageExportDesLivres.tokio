@@ -182,7 +182,7 @@
             <row>
                 <COLUMNS_ID value="8"/>
                 <SECTION_ID value="3"/>
-                <DB_TABLE_NAME value="$dbApplicationUser$.TMP_COMPUTED_TAB"/>
+                <DB_TABLE_NAME value="$dbApplicationUser$.TMP_BOOK_COMPUTE"/>
                 <DB_FIELD_NAME value="CTE_STRING"/>
                 <COLUMN_NAME value="Champ2"/>
                 <COLUMN_NUMBER value="2"/>

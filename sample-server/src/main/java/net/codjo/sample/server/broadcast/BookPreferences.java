@@ -22,7 +22,7 @@ public class BookPreferences extends Preferences {
         super(FAMILY,
               "AP_BOOK",
               "$dbApplicationUser$.TMP_ALL_BOOK_SEL",
-              "$dbApplicationUser$.TMP_COMPUTED_TAB");
+              "$dbApplicationUser$.TMP_BOOK_COMPUTE");
     }
 
 
@@ -90,7 +90,7 @@ public class BookPreferences extends Preferences {
                                               String selectionTableName,
                                               Date broadcastDate,
                                               int selectorId) throws SQLException {
-            createSelectionTable(connection, selectionTableName);
+            createSelectionTable(connection, context.replaceVariables(selectionTableName));
             String selectorQuery = BASE_INSERT_QUERY + getSelectorQuery(connection, selectorId);
             executeQueryWithVariables(context, connection, selectorQuery);
         }
