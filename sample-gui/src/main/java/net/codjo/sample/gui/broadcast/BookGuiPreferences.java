@@ -27,7 +27,7 @@ public class BookGuiPreferences extends AbstractSelectorGuiPreference {
     @Override
     protected GuiField[] getComputedFields(String aComputedTableName) {
         return new GuiField[]{
-              new GuiField(aComputedTableName, "CTE_STRING", "Constante chaîne")
+              new GuiField(aComputedTableName, "COMPUTED_PUBLICATION", "Constante chaîne")
         };
     }
 

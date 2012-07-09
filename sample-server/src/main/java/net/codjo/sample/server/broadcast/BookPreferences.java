@@ -3,13 +3,11 @@ import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.SQLException;
-import java.sql.Types;
 import net.codjo.broadcast.common.Context;
 import net.codjo.broadcast.common.PostBroadcaster;
 import net.codjo.broadcast.common.Preferences;
 import net.codjo.broadcast.common.Selector;
 import net.codjo.broadcast.common.computed.ComputedField;
-import net.codjo.broadcast.common.computed.ConstantField;
 import net.codjo.broadcast.server.selector.AbstractGenericSelector;
 /**
  *
@@ -35,8 +33,7 @@ public class BookPreferences extends Preferences {
 
     @Override
     protected ComputedField[] initComputedFields() {
-        return new ComputedField[]{new ConstantField("CTE_STRING", Types.VARCHAR, "CTE_STRING VARCHAR(15)", "TOPOLINO")
-        };
+        return new ComputedField[]{new ComputedPublicationDate()};
     }
 
 
@@ -101,7 +98,8 @@ public class BookPreferences extends Preferences {
             createTempTable(connection, tableName,
                             " SELECTION_ID         numeric(18)   , "
                             + " TITLE      varchar(255)  not null,"
-                            + " AUTHOR      varchar(150)  not null ");
+                            + " AUTHOR      varchar(150)  not null "
+                            + ", constraint PK_SELEC_BOOK primary key (SELECTION_ID)");
         }
     }
 }
