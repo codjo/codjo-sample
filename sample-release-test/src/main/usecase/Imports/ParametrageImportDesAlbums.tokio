@@ -45,7 +45,7 @@
         </PM_FIELD_IMPORT_SETTINGS>
     </input>
     <output>
-        <PM_IMPORT_SETTINGS>
+        <PM_IMPORT_SETTINGS orderClause="IMPORT_SETTINGS_ID">
             <row>
                 <IMPORT_SETTINGS_ID value="1"/>
                 <FILE_TYPE value="Albums.txt"/>
@@ -58,7 +58,7 @@
                 <FILTER_EXPRESSION value="dddd"/>
             </row>
         </PM_IMPORT_SETTINGS>
-        <PM_FIELD_IMPORT_SETTINGS>
+        <PM_FIELD_IMPORT_SETTINGS orderClause="IMPORT_SETTINGS_ID, POSITION">
             <row>
                 <IMPORT_SETTINGS_ID value="1"/>
                 <POSITION value="1"/>

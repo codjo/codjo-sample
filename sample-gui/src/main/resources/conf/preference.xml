@@ -35,5 +35,15 @@
         <column fieldName="author" label="Auteur" preferredSize="150"/>
         <column fieldName="biography" label="Biographie" preferredSize="100"/>
     </preference>
+    <preference id="WithIdentityList" detailWindowClassName="net.codjo.sample.gui.referential.WithIdentityDetailLogic">
+        <selectAll>selectAllWithIdentity</selectAll>
+        <selectByPk>selectWithIdentityById</selectByPk>
+        <update>updateWithIdentity</update>
+        <!--<delete>deleteWithIdentity</delete>-->
+        <insert>newWithIdentity</insert>
+        <!--<requetor>requetorWithIdentity</requetor>-->
+        <column fieldName="idTypeIdentity" label="Id de type identity" preferredSize="150"/>
+        <column fieldName="name" label="Nom" preferredSize="100"/>
+    </preference>
 
 </preferenceList>

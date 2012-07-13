@@ -39,6 +39,10 @@ revoke all on PM_REF_FAMILY_REF_ASSO                from APP_USER
 /
 revoke all on PM_REFERENTIAL_FAMILY                 from APP_USER
 /
+revoke all on REF_WITH_IDENTITY                     from APP_USER
+/
+revoke all on SEQ_BROADCAST_SELECTION                     from APP_USER
+/
 /**************************/
 /*  Droits sur les vues  */
 /**************************/

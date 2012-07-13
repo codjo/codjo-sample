@@ -8,7 +8,7 @@ import net.codjo.mad.common.structure.StructureReader;
 public class BookGuiPreferences extends AbstractSelectorGuiPreference {
 
     public BookGuiPreferences(StructureReader structures) {
-        super("BOOKS", "#COMPUTED_TAB", structures);
+        super("BOOKS", "$dbApplicationUser$.TMP_BOOK_COMPUTE", structures);
     }
 
 
@@ -27,7 +27,7 @@ public class BookGuiPreferences extends AbstractSelectorGuiPreference {
     @Override
     protected GuiField[] getComputedFields(String aComputedTableName) {
         return new GuiField[]{
-              new GuiField(aComputedTableName, "CTE_STRING", "Constante chaîne")
+              new GuiField(aComputedTableName, "COMPUTED_PUBLICATION", "Constante chaîne")
         };
     }
 
