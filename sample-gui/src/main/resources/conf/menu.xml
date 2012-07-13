@@ -31,6 +31,7 @@
     <menu>
         <name>Ref</name>
         <menu action="net.codjo.sample.gui.referential.AuthorAction"/>
+        <menu action="net.codjo.sample.gui.referential.WithIdentityAction"/>
     </menu>
     <menu>
         <name>Administration</name>

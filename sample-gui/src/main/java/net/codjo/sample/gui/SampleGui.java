@@ -34,9 +34,9 @@ public class SampleGui {
     public static void main(String[] arguments) throws IOException {
         final MadGuiCore guiClient = new MadGuiCore();
 
+        guiClient.addPlugin(InternationalizationGuiPlugin.class);
         guiClient.addPlugin(SecurityGuiPlugin.class);
         guiClient.addPlugin(SecurityClientPlugin.class);
-        guiClient.addPlugin(InternationalizationGuiPlugin.class);
         guiClient.addPlugin(MadConnectionPlugin.class);
         guiClient.addPlugin(MadGuiPlugin.class);
         guiClient.addPlugin(WorkflowGuiPlugin.class);

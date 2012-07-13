@@ -3,13 +3,11 @@ import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.SQLException;
-import java.sql.Types;
 import net.codjo.broadcast.common.Context;
 import net.codjo.broadcast.common.PostBroadcaster;
 import net.codjo.broadcast.common.Preferences;
 import net.codjo.broadcast.common.Selector;
 import net.codjo.broadcast.common.computed.ComputedField;
-import net.codjo.broadcast.common.computed.ConstantField;
 import net.codjo.broadcast.server.selector.AbstractGenericSelector;
 /**
  *
@@ -19,7 +17,10 @@ public class BookPreferences extends Preferences {
 
 
     public BookPreferences() {
-        super(FAMILY, "AP_BOOK", "#ALL_BOOK_SEL", "#COMPUTED_TAB");
+        super(FAMILY,
+              "AP_BOOK",
+              "$dbApplicationUser$.TMP_ALL_BOOK_SEL",
+              "$dbApplicationUser$.TMP_BOOK_COMPUTE");
     }
 
 
@@ -32,8 +33,7 @@ public class BookPreferences extends Preferences {
 
     @Override
     protected ComputedField[] initComputedFields() {
-        return new ComputedField[]{new ConstantField("CTE_STRING", Types.VARCHAR, "CTE_STRING VARCHAR(15)", null)
-        };
+        return new ComputedField[]{new ComputedPublicationDate()};
     }
 
 
@@ -60,7 +60,7 @@ public class BookPreferences extends Preferences {
 
 
     public static class BookSelector extends AbstractGenericSelector {
-        private static final String BASE_INSERT_QUERY = "insert into $selectionTable$ (TITLE, AUTHOR) ";
+        private static final String BASE_INSERT_QUERY = "insert into $selectionTable$ (SELECTION_ID, TITLE, AUTHOR) ";
 
 
         public BookSelector(int selectorId) {
@@ -74,8 +74,9 @@ public class BookPreferences extends Preferences {
                                              String selectionTableName,
                                              Date broadcastDate,
                                              int selectorId) throws SQLException {
-            createSelectionTable(connection, selectionTableName);
-            String selectorQuery = BASE_INSERT_QUERY + " select TITLE, AUTHOR from AP_BOOK";
+            createSelectionTable(connection, context.replaceVariables(selectionTableName));
+            String selectorQuery = BASE_INSERT_QUERY
+                                   + " select SEQ_BROADCAST_SELECTION.nextval ,TITLE, AUTHOR from AP_BOOK";
             executeQueryWithVariables(context, connection, selectorQuery);
         }
 
@@ -86,17 +87,19 @@ public class BookPreferences extends Preferences {
                                               String selectionTableName,
                                               Date broadcastDate,
                                               int selectorId) throws SQLException {
-            createSelectionTable(connection, selectionTableName);
+            createSelectionTable(connection, context.replaceVariables(selectionTableName));
             String selectorQuery = BASE_INSERT_QUERY + getSelectorQuery(connection, selectorId);
             executeQueryWithVariables(context, connection, selectorQuery);
         }
 
 
         private void createSelectionTable(Connection connection, String tableName) throws SQLException {
+            // TODO[Oracle Support] re-init de la sequence??
             createTempTable(connection, tableName,
-                            " SELECTION_ID         numeric(18)   identity, "
+                            " SELECTION_ID         numeric(18)   , "
                             + " TITLE      varchar(255)  not null,"
-                            + " AUTHOR      varchar(150)  not null ");
+                            + " AUTHOR      varchar(150)  not null "
+                            + ", constraint PK_SELEC_BOOK primary key (SELECTION_ID)");
         }
     }
 }

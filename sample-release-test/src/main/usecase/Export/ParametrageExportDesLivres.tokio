@@ -57,7 +57,7 @@
             </row>
         </PM_BROADCAST_FILE_CONTENTS>
         <PM_BROADCAST_COLUMNS>
-            <row>
+            <row id="columns_1">
                 <RIGHT_COLUMN_PADDING value="true"/>
                 <DB_FIELD_NAME value="TITLE"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
@@ -66,7 +66,7 @@
                 <COLUMN_NAME value="Titre"/>
                 <SECTION_ID value="1"/>
             </row>
-            <row>
+            <row id="columns_2">
                 <RIGHT_COLUMN_PADDING value="false"/>
                 <DB_FIELD_NAME value="AUTHOR"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
@@ -75,7 +75,7 @@
                 <COLUMN_NAME value="Auteur"/>
                 <SECTION_ID value="1"/>
             </row>
-            <row>
+            <row id="columns_3">
                 <RIGHT_COLUMN_PADDING value="true"/>
                 <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
@@ -85,7 +85,7 @@
                 <COLUMN_NAME value="Année de publication"/>
                 <SECTION_ID value="1"/>
             </row>
-            <row>
+            <row id="columns_4">
                 <RIGHT_COLUMN_PADDING value="true"/>
                 <DB_FIELD_NAME value="TITLE"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
@@ -94,7 +94,7 @@
                 <COLUMN_NAME value="Titre"/>
                 <SECTION_ID value="2"/>
             </row>
-            <row>
+            <row id="columns_5">
                 <RIGHT_COLUMN_PADDING value="false"/>
                 <DB_FIELD_NAME value="AUTHOR"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
@@ -103,7 +103,7 @@
                 <COLUMN_NAME value="Auteur"/>
                 <SECTION_ID value="2"/>
             </row>
-            <row>
+            <row id="columns_6">
                 <RIGHT_COLUMN_PADDING value="true"/>
                 <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
                 <DB_TABLE_NAME value="AP_BOOK"/>
@@ -123,7 +123,7 @@
                 <DECIMAL_SEPARATOR value="."/>
             </row>
         </PM_SOURCE_SYSTEM>
-        <PM_BROADCAST_FILES>
+        <PM_BROADCAST_FILES orderClause="FILE_ID">
             <row>
                 <FILE_ID value="2"/>
                 <FILE_NAME value="book.txt"/>
@@ -136,7 +136,7 @@
             </row>
         </PM_BROADCAST_FILES>
 
-        <PM_BROADCAST_SECTION>
+        <PM_BROADCAST_SECTION orderClause="SECTION_ID">
             <row>
                 <SECTION_NAME value="Ken Follett"/>
                 <FAMILY value="BOOKS"/>
@@ -157,7 +157,7 @@
                 <SECTION_ID value="4"/>
             </row>
         </PM_BROADCAST_SECTION>
-        <PM_BROADCAST_FILE_CONTENTS>
+        <PM_BROADCAST_FILE_CONTENTS orderClause="CONTENT_ID">
             <row>
                 <CONTENT_ID value="3"/>
                 <FILE_ID value="2"/>
@@ -166,35 +166,10 @@
                 <COLUMN_HEADER value="false"/>
             </row>
         </PM_BROADCAST_FILE_CONTENTS>
-        <PM_BROADCAST_COLUMNS>
-            <row>
-                <RIGHT_COLUMN_PADDING value="true"/>
-                <DB_FIELD_NAME value="TITLE"/>
-                <DB_TABLE_NAME value="AP_BOOK"/>
-                <COLUMNS_ID value="4"/>
-                <COLUMN_NUMBER value="40"/>
-                <COLUMN_NAME value="Titre"/>
-                <SECTION_ID value="2"/>
-            </row>
-            <row>
-                <RIGHT_COLUMN_PADDING value="false"/>
-                <DB_FIELD_NAME value="AUTHOR"/>
-                <DB_TABLE_NAME value="AP_BOOK"/>
-                <COLUMNS_ID value="5"/>
-                <COLUMN_NUMBER value="50"/>
-                <COLUMN_NAME value="Auteur"/>
-                <SECTION_ID value="2"/>
-            </row>
-            <row>
-                <RIGHT_COLUMN_PADDING value="true"/>
-                <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
-                <DB_TABLE_NAME value="AP_BOOK"/>
-                <COLUMN_DATE_FORMAT value="yyyyMM"/>
-                <COLUMNS_ID value="6"/>
-                <COLUMN_NUMBER value="60"/>
-                <COLUMN_NAME value="année de publication"/>
-                <SECTION_ID value="2"/>
-            </row>
+        <PM_BROADCAST_COLUMNS orderClause="COLUMNS_ID">
+            <copy row="columns_4"/>
+            <copy row="columns_5"/>
+            <copy row="columns_6"/>
             <row>
                 <COLUMNS_ID value="7"/>
                 <SECTION_ID value="3"/>
@@ -207,8 +182,8 @@
             <row>
                 <COLUMNS_ID value="8"/>
                 <SECTION_ID value="3"/>
-                <DB_TABLE_NAME value="AP_BOOK"/>
-                <DB_FIELD_NAME value="PUBLICATION_YEAR"/>
+                <DB_TABLE_NAME value="$dbApplicationUser$.TMP_BOOK_COMPUTE"/>
+                <DB_FIELD_NAME value="COMPUTED_PUBLICATION"/>
                 <COLUMN_NAME value="Champ2"/>
                 <COLUMN_NUMBER value="2"/>
                 <RIGHT_COLUMN_PADDING value="false"/>

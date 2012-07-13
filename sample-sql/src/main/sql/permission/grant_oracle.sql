@@ -39,6 +39,14 @@ grant select, insert, delete, update, references on PM_REF_FAMILY_REF_ASSO      
 /
 grant select, insert, delete, update, references on PM_REFERENTIAL_FAMILY           to APP_USER
 /
+grant select, insert, delete, update, references on REF_WITH_IDENTITY               to APP_USER
+/
+
+/******************************/
+/*  Droits sur les sequences  */
+/*****************************/
+grant select, alter on SEQ_BROADCAST_SELECTION                                      to APP_USER
+/
 
 /**************************/
 /*  Droits sur les vues  */

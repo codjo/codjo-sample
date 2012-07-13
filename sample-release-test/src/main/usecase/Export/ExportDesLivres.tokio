@@ -119,6 +119,16 @@
                 <COLUMN_NAME value="année de publication"/>
                 <SECTION_ID value="2"/>
             </row>
+            <row>
+                <RIGHT_COLUMN_PADDING value="true"/>
+                <PADDING_CARACTER value=""/>
+                <DB_FIELD_NAME value="COMPUTED_PUBLICATION"/>
+                <DB_TABLE_NAME value="$dbApplicationUser$.TMP_BOOK_COMPUTE"/>
+                <COLUMNS_ID value="7"/>
+                <COLUMN_NUMBER value="70"/>
+                <COLUMN_NAME value="Test calcul"/>
+                <SECTION_ID value="1"/>
+            </row>
         </PM_BROADCAST_COLUMNS>
 
         <REF_AUTHOR>
@@ -134,6 +144,11 @@
                 <TITLE value="Le Dahlia noir"/>
                 <AUTHOR value="James Ellroy"/>
                 <PUBLICATION_YEAR value="1987-01-01"/>
+            </row>
+            <row>
+                <TITLE value="L.A. Confidential"/>
+                <AUTHOR value="James Ellroy"/>
+                <PUBLICATION_YEAR value="1990-01-01"/>
             </row>
             <row>
                 <TITLE value="Les piliers de la Terre"/>
