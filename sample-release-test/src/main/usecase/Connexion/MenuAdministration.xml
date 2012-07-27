@@ -42,6 +42,9 @@
             <assertFrame title="Quarantaine des albums"/>
             <closeFrame title="Quarantaine des albums"/>
         </group>
+        <group>
+            <sleep duration="60000"/>
+        </group>
     </gui-test>
 
     <security-model user="${testEnvironment.user}" roles="administrateur"/>
