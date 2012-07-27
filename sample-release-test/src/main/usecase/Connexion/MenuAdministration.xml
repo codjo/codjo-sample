@@ -43,7 +43,7 @@
             <closeFrame title="Quarantaine des albums"/>
         </group>
         <group>
-            <sleep duration="60000"/>
+            <sleep duration="5000"/>
         </group>
     </gui-test>
 

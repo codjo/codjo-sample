@@ -12,9 +12,6 @@
 
     <gui-test>
         <group>
-            <sleep duration="60000"/>
-        </group>
-        <group>
             <group name="Author manipulation">
                 <click menu="Ref:Artistes"/>
                 <assertFrame title="Artistes"/>
