@@ -121,6 +121,36 @@
                 <serverHost>${serverHostDev}</serverHost>
             </properties>
         </profile>
+        <profile>
+            <id>database-integration</id>
+            <activation>
+                <property>
+                    <name>database</name>
+                    <value>integration</value>
+                </property>
+            </activation>
+            <properties>
+                <databaseServer>${oracleDatabaseServer}</databaseServer>
+                <databasePort>${oracleDatabasePort}</databasePort>
+                <databaseUser>${oracleDatabaseUser}</databaseUser>
+                <databasePassword>${oracleDatabasePassword}</databasePassword>
+                
+                <databaseSid>${oracleDatabaseSid}</databaseSid>
+                <databaseBase>${databaseSid}</databaseBase> <!-- Sert dans codjo-database pour construire l'url Oracle -->
+                <databaseCatalog>${databaseUser}</databaseCatalog> <!-- Sert dans codjo-sql pour construire l'alter Session default schema -->
+                <databaseSchema>${databaseUser}</databaseSchema>
+<!-- Debut ajout pour SMART -->
+                <schemaPresentation>${databaseSchema}</schemaPresentation>
+                <schemaCollecte>${databaseSchema}</schemaCollecte>
+<!--                 <databaseApplicationUser>${databaseSchema}</databaseApplicationUser>
+                <databaseApplicationPassword>${databaseSchema}</databaseApplicationPassword> -->
+<!-- Fin ajout pour SMART -->
+                <jdbcPrefix>jdbc:oracle:thin:@</jdbcPrefix>
+                <databaseJdbcUrl>@jdbcPrefix@@databaseServer@:@databasePort@:@databaseSid@</databaseJdbcUrl>
+                <databaseDriver>oracle.jdbc.driver.OracleDriver</databaseDriver>
+                <databaseType>oracle</databaseType>
+            </properties>
+        </profile>
     </profiles>
 
     <!--
