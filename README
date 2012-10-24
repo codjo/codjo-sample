@@ -8,13 +8,14 @@ cd codjo-sample
 git checkout integration
 
 mvn --batch-mode codjo:switch-to-parent-release
-mvn --batch-mode release:prepare
-mvn release:perform -DconnectionUrl=scm:git:file:///C:/dev/projects/codjo-stab/codjo-sample/.git -Darguments="-Dremote=codjo"
+mvn --batch-mode release:prepare -Ddatabase=integration -Darguments="-Ddatabase=integration"
+mvn release:perform -DconnectionUrl=scm:git:file:///C:/dev/projects/codjo-stab/codjo-sample/.git -Darguments="-Dremote=codjo -Ddatabase=integration -Dprocess=integration" -Ddatabase=integration -Dprocess=integration
 mvn --batch-mode codjo:switch-to-parent-snapshot
 
 git checkout master
 git merge integration
 git gc
+
 push.cmd
 git push --tag
 gh delete codjo-sample
