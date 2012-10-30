@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <!-- POM's layout - http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html -->
 
     <modelVersion>4.0.0</modelVersion>
@@ -10,7 +9,7 @@
 
     <groupId>net.codjo.sample</groupId>
     <artifactId>sample</artifactId>
-    <version>1.0-0-SNAPSHOT</version>
+    <version>1.0-1-SNAPSHOT</version>
     <!-- START SNIPPET: super-pom -->
     <parent>
         <groupId>net.codjo.pom</groupId>
@@ -23,47 +22,47 @@
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-batch</artifactId>
-                <version>1.0-0-SNAPSHOT</version>
+                <version>1.0-1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-batch</artifactId>
-                <version>1.0-0-SNAPSHOT</version>
+                <version>1.0-1-SNAPSHOT</version>
                 <classifier>assembly</classifier>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-gui</artifactId>
-                <version>1.0-0-SNAPSHOT</version>
+                <version>1.0-1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-server</artifactId>
-                <version>1.0-0-SNAPSHOT</version>
+                <version>1.0-1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-server</artifactId>
-                <version>1.0-0-SNAPSHOT</version>
+                <version>1.0-1-SNAPSHOT</version>
                 <classifier>assembly</classifier>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-datagen</artifactId>
-                <version>1.0-0-SNAPSHOT</version>
+                <version>1.0-1-SNAPSHOT</version>
                 <classifier>client</classifier>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-datagen</artifactId>
-                <version>1.0-0-SNAPSHOT</version>
+                <version>1.0-1-SNAPSHOT</version>
                 <classifier>server</classifier>
                 <!--  <scope>compile</scope>  -->
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-datagen</artifactId>
-                <version>1.0-0-SNAPSHOT</version>
+                <version>1.0-1-SNAPSHOT</version>
                 <classifier>sql</classifier>
             </dependency>
         </dependencies>
