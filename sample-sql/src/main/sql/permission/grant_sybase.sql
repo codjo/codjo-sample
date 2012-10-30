@@ -15,6 +15,7 @@ grant select, insert, delete, update, references on PM_IMPORT_SETTINGS          
 grant select, insert, delete, update, references on PM_SOURCE_SYSTEM                to Utilisateur, Maintenance
 
 grant select, insert, delete, update, references on REF_AUTHOR                      to Utilisateur, Maintenance
+grant select, insert, delete, update, references on AP_FILM                         to Utilisateur, Maintenance
 grant select, insert, delete, update, references on AP_BOOK                         to Utilisateur, Maintenance
 grant select, insert, delete, update, references on AP_ALBUM                        to Utilisateur, Maintenance
 grant select, insert, delete, update, references on Q_AP_ALBUM                      to Utilisateur, Maintenance
@@ -49,6 +50,7 @@ grant select, references on PM_FIELD_IMPORT_SETTINGS        to Consultation
 grant select, references on PM_IMPORT_SETTINGS              to Consultation
 grant select, references on PM_SOURCE_SYSTEM                to Consultation
 
+grant select, references on AP_FILM                         to Consultation
 grant select, references on AP_BOOK                         to Consultation
 go
 

@@ -37,7 +37,49 @@
         </properties>
     </entity>
 
+    <entity name="net.codjo.sample.Film" table="AP_FILM" order-clause="TITLE, DIRECTOR">
+        <description>Une table contenant des films</description>
 
+        <feature>
+            <sql/>
+            <bean/>
+            <castor/>
+            <doc-structure/>
+            <handler-update id="updateBook"/>
+            <handler-select id="selectAllBook" type="All"/>
+            <handler-select id="selectBookById" type="By_Primary-Key"/>
+            <sql-constraint/>
+            <sql-index>
+                <idx type="primary-key" name-prefix="X1_" clustered="false"/>
+            </sql-index>
+        </feature>
+
+        <primary-key>
+            <field name="title"/>
+            <field name="director"/>
+        </primary-key>
+
+        <foreign-keys>
+            <link id="FK_AUTH_FILM" table="net.codjo.sample.Author">
+                <field from="director" to="author"/>
+            </link>
+        </foreign-keys>
+
+        <properties>
+            <field name="title" type="string">
+                <description>Titre du livre</description>
+                <sql type="varchar" precision="255" required="true"/>
+            </field>
+            <field name="director" type="string">
+                <description>Réalisateur</description>
+                <sql type="varchar" precision="150" required="true"/>
+            </field>
+            <field name="publicationYear" type="java.sql.Date">
+                <description>Année de sortie</description>
+                <sql type="timestamp"/>
+            </field>
+        </properties>
+    </entity>
 
     <entity name="net.codjo.sample.Book" table="AP_BOOK" order-clause="TITLE, AUTHOR">
         <description>Une table contenant des livres</description>
