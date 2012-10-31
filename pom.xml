@@ -183,6 +183,8 @@
                             </executions>
                             <configuration>
                                 <runReleaseScripts>true</runReleaseScripts>
+                                <!-- Bug du provider git qui rajoute sample-sql dans l'url  -->
+                                <connectionUrl>scm:git:https://github.com/codjo/codjo-sample.git</connectionUrl>
                             </configuration>
                         </plugin>
                     </plugins>

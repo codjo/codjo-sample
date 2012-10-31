@@ -51,9 +51,4 @@
             </plugin>
         </plugins>
     </build>
-    <scm>
-        <connection>scm:git:https://github.com/codjo/codjo-sample.git</connection>
-        <developerConnection>scm:git:https://github.com/codjo/codjo-sample.git</developerConnection>
-        <url>https://github.com/codjo/codjo-sample</url>
-    </scm>
 </project>
