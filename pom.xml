@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <!-- POM's layout - http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html -->
 
     <modelVersion>4.0.0</modelVersion>
@@ -102,6 +103,7 @@
         <batchMainClass>net.codjo.sample.batch.SampleBatch</batchMainClass>
 
         <versionInProduction>sample-1.0-0</versionInProduction>
+        <scmConnectionUrl>scm:git:https://github.com/codjo/codjo-sample.git</scmConnectionUrl>
     </properties>
 
     <!--
@@ -150,8 +152,18 @@
                 <databaseJdbcUrl>@jdbcPrefix@@databaseServer@:@databasePort@:@databaseSid@</databaseJdbcUrl>
                 <databaseDriver>oracle.jdbc.driver.OracleDriver</databaseDriver>
                 <databaseType>oracle</databaseType>
-
-                <to_be_replaced>permission\grant_oracle.sql</to_be_replaced>
+            </properties>
+        </profile>
+        <profile>
+            <id>scmUrl-agif-local-repo</id>
+            <activation>
+                <property>
+                    <name>scmUrl</name>
+                    <value>agif-local-repo</value>
+                </property>
+            </activation>
+            <properties>
+                <scmConnectionUrl>scm:git:file://Z:/equipes/equipe-transverse/codjo.net/sic-git-repositories/codjo-sample.git</scmConnectionUrl>
             </properties>
         </profile>
         <profile>
@@ -184,7 +196,10 @@
                             <configuration>
                                 <runReleaseScripts>true</runReleaseScripts>
                                 <!-- Bug du provider git qui rajoute sample-sql dans l'url  -->
-                                <connectionUrl>scm:git:https://github.com/codjo/codjo-sample.git</connectionUrl>
+                                <!-- et repository local sur Z pour hudson qui n'est pas connecté à internet ! -->
+                                <!--<connectionUrl>scm:git:https://github.com/codjo/codjo-sample.git</connectionUrl>-->
+                                <!-- ou <connectionUrl>scm:git:file://Z:/equipes/equipe-transverse/codjo.net/sic-git-repositories/codjo-sample.git</connectionUrl>-->
+                                <connectionUrl>${scmConnectionUrl}</connectionUrl>
                             </configuration>
                         </plugin>
                     </plugins>
