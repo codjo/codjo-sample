@@ -200,6 +200,10 @@
                 <description>Année de publication</description>
                 <sql type="timestamp"/>
             </field>
+            <field name="netPrice" type="big-decimal">
+                <description>Net Asset Value</description>
+                <sql type="numeric" precision="13,2"/>
+            </field>
         </properties>
     </entity>
 
@@ -239,6 +243,10 @@
                 <description>Année de publication</description>
                 <sql type="timestamp"/>
             </field>
+            <field name="netPrice" type="big-decimal">
+                <description>Net Asset Value</description>
+                <sql type="numeric" precision="13,2"/>
+            </field>
             <!-- STRUCTURE FIELDs -->
             <field name="quarantine" structure="net.codjo.sample.data.Quarantine"/>
         </properties>
@@ -272,6 +280,10 @@
             </field>
             <field name="publicationYear" type="string">
                 <description>Année de publication</description>
+                <sql type="varchar" precision="255"/>
+            </field>
+            <field name="netPrice" type="string">
+                <description>Prix</description>
                 <sql type="varchar" precision="255"/>
             </field>
             <field name="errorLog" type="string">
