@@ -29,7 +29,7 @@
                 </row>
             </AP_BOOK>
 
-            <table name="${databaseUser}.TMP_ALL_BOOK_SEL" orderClause="SELECTION_ID">
+            <table name="TMP_ALL_BOOK_SEL" orderClause="SELECTION_ID">
                 <row>
                     <field name="SELECTION_ID" value="1"/>
                     <TITLE value="Le Dahlia noir"/>
@@ -41,7 +41,7 @@
                     <AUTHOR value="James Ellroy"/>
                 </row>
             </table>
-            <table name="${databaseUser}.TMP_BOOK_COMPUTE" orderClause="SELECTION_ID">
+            <table name="TMP_BOOK_COMPUTE" orderClause="SELECTION_ID">
                 <row>
                     <field name="SELECTION_ID" value="1"/>
                     <field name="COMPUTED_PUBLICATION"/>
@@ -53,7 +53,7 @@
             </table>
         </input>
         <output>
-            <table name="${databaseUser}.TMP_BOOK_COMPUTE" orderClause="SELECTION_ID">
+            <table name="TMP_BOOK_COMPUTE" orderClause="SELECTION_ID">
                 <row>
                     <field name="SELECTION_ID" value="1"/>
                     <field name="COMPUTED_PUBLICATION" value="1987"/>

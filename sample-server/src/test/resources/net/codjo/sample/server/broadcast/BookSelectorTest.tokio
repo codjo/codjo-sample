@@ -46,29 +46,4 @@
             </table>
         </output>
     </case>
-    <case id="bookSelectorCleanup" inheritId="bookSelector">
-        <input>
-            <table name="TMP_TEMP_TABLE" orderClause="TITLE, AUTHOR">
-                <row>
-                    <SELECTION_ID value="1"/>
-                    <TITLE value="Le Dahlia noir"/>
-                    <AUTHOR value="James Ellroy"/>
-                </row>
-                <row>
-                    <SELECTION_ID value="2"/>
-                    <TITLE value="L.A. Confidential"/>
-                    <AUTHOR value="James Ellroy"/>
-                </row>
-                <row>
-                    <SELECTION_ID value="3"/>
-                    <TITLE value="Les piliers de la Terre"/>
-                    <AUTHOR value="Ken Follett"/>
-                </row>
-            </table>
-        </input>
-        <output>
-            <table name="TMP_TEMP_TABLE" orderClause="TITLE, AUTHOR">
-            </table>
-        </output>
-    </case>
 </cases>
