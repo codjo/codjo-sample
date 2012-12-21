@@ -1,5 +1,16 @@
 table/AP_FILM.tab
 constraint/AP_FILM.sql
 index/AP_FILM.sql
+table/AP_ALBUM.tab
+constraint/AP_ALBUM.sql
+index/AP_ALBUM.sql
+table/Q_AP_ALBUM.tab
+table/Q_AP_ALBUM-sequence.sql
+index/Q_AP_ALBUM.sql
+table/Q_AP_USER_ALBUM.tab
+table/Q_AP_USER_ALBUM-sequence.sql
+index/Q_AP_USER_ALBUM.sql
+table/CTRL_ALBUM.tab
+index/CTRL_ALBUM.sql
 permission/revoke_oracle.sql
 permission/grant_oracle.sql
