@@ -6,9 +6,11 @@ constraint/AP_ALBUM.sql
 index/AP_ALBUM.sql
 table/Q_AP_ALBUM.tab
 table/Q_AP_ALBUM-sequence.sql
+table/TR_Q_AP_ALBUM_SEQ_I.sql
 index/Q_AP_ALBUM.sql
 table/Q_AP_USER_ALBUM.tab
 table/Q_AP_USER_ALBUM-sequence.sql
+table/TR_Q_AP_USER_ALBUM_SEQ_I.sql
 index/Q_AP_USER_ALBUM.sql
 table/CTRL_ALBUM.tab
 index/CTRL_ALBUM.sql
