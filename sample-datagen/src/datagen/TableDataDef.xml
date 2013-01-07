@@ -239,13 +239,13 @@
                 <description>Artiste</description>
                 <sql type="varchar" precision="150"/>
             </field>
-            <field name="publicationYear" type="java.sql.Date">
+            <field name="publicationYear" type="string">
                 <description>Année de publication</description>
-                <sql type="timestamp"/>
+                <sql type="varchar" precision="255"/>
             </field>
-            <field name="netPrice" type="big-decimal">
+            <field name="netPrice" type="string">
                 <description>Net Asset Value</description>
-                <sql type="numeric" precision="13,2"/>
+                <sql type="varchar" precision="255"/>
             </field>
             <!-- STRUCTURE FIELDs -->
             <field name="quarantine" structure="net.codjo.sample.data.Quarantine"/>
