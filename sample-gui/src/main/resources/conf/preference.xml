@@ -20,6 +20,7 @@
         <column fieldName="title" label="Titre de l'album" preferredSize="100"/>
         <column fieldName="author" label="Artiste" preferredSize="100"/>
         <column fieldName="publicationYear" label="Année de publication" preferredSize="100"/>
+        <column fieldName="netPrice" label="Prix" preferredSize="50"/>
         <column fieldName="errorType" label="Error" preferredSize="50"/>
         <column fieldName="errorLog" label="Description" preferredSize="200"/>
         <column fieldName="sourceFile" label="File" preferredSize="0"/>

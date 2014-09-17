@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <!-- POM's layout - http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html -->
 
     <modelVersion>4.0.0</modelVersion>
@@ -80,6 +81,11 @@
             <groupId>net.codjo.referential</groupId>
             <artifactId>codjo-referential-gui</artifactId>
         </dependency>
+        <dependency>
+            <groupId>net.codjo.fake-db</groupId>
+            <artifactId>codjo-fake-db</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <!--
@@ -91,6 +97,59 @@
     <!--
     | Build Settings
     -->
+    <profiles>
+        <profile>
+            <id>generateLocalJnlp</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>ideauidesigner-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.bud.maven.mojo</groupId>
+                        <artifactId>maven-simplewebstart-plugin</artifactId>
+                        <configuration>
+                            <jnlp>
+                                <mainClass>${clientMainClass}</mainClass>
+                                <codebase>file:///${basedir}/target/jnlp/</codebase>
+                                <title>Sample Test JWS</title>
+                                <permission>all</permission>
+                                <properties>
+                                    <property>
+                                        <name>server.default.url</name>
+                                        <value>server.url.developpement</value>
+                                    </property>
+                                    <property>
+                                        <name>server.url.developpement</name>
+                                        <value>Developpement,${serverHost}:${serverPort}</value>
+                                    </property>
+                                </properties>
+                            </jnlp>
+                            <resourcesAddOn><![CDATA[<property name="dummyProperty" value="dummyValue"/>]]></resourcesAddOn>
+                            <sign>
+                                <alias>${signatureAlias}</alias>
+                                <keypass>${signatureKeypass}</keypass>
+                                <storepass>${signatureStorepass}</storepass>
+                                <keystore>${signatureKeystore}</keystore>
+                            </sign>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jnlp</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
@@ -145,4 +204,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

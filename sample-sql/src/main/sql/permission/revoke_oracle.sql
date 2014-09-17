@@ -25,6 +25,8 @@ revoke all on PM_SOURCE_SYSTEM                      from APP_USER
 /
 revoke all on REF_AUTHOR                            from APP_USER
 /
+revoke all on AP_FILM                               from APP_USER
+/
 revoke all on AP_BOOK                               from APP_USER
 /
 revoke all on AP_ALBUM                              from APP_USER

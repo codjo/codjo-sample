@@ -60,6 +60,12 @@
             <artifactId>codjo-broadcast-server</artifactId>
         </dependency>
         <dependency>
+            <groupId>net.codjo.broadcast</groupId>
+            <artifactId>codjo-broadcast-common</artifactId>
+            <classifier>tests</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>net.codjo.referential</groupId>
             <artifactId>codjo-referential-server</artifactId>
         </dependency>

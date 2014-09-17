@@ -25,6 +25,8 @@ grant select, insert, delete, update, references on PM_SOURCE_SYSTEM            
 /
 grant select, insert, delete, update, references on REF_AUTHOR                      to APP_USER
 /
+grant select, insert, delete, update, references on AP_FILM                         to APP_USER
+/
 grant select, insert, delete, update, references on AP_BOOK                         to APP_USER
 /
 grant select, insert, delete, update, references on AP_ALBUM                        to APP_USER

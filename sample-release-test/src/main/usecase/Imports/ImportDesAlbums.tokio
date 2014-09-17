@@ -42,6 +42,13 @@
                 <DB_DESTINATION_FIELD_NAME value="PUBLICATION_YEAR"/>
                 <DESTINATION_FIELD_TYPE value="S"/>
             </row>
+            <row>
+                <IMPORT_SETTINGS_ID value="1"/>
+                <POSITION value="4"/>
+                <DB_DESTINATION_FIELD_NAME value="NET_PRICE"/>
+                <DESTINATION_FIELD_TYPE value="S"/>
+                <REMOVE_LEFT_ZEROS value="false"/>
+            </row>
         </PM_FIELD_IMPORT_SETTINGS>
 
         <REF_AUTHOR>
@@ -59,6 +66,7 @@
             <row id="initialAlbum">
                 <TITLE value="A title"/>
                 <AUTHOR value="Radiohead"/>
+                <NET_PRICE value="2.0"/>
             </row>
         </AP_ALBUM>
     </input>
@@ -80,11 +88,12 @@
                 <TITLE value="You All Look the Same to Me"/>
                 <AUTHOR value="Archive"/>
                 <PUBLICATION_YEAR value="2002-01-01"/>
+                <NET_PRICE value="2"/>
             </row>
             <row>
                 <TITLE value="Pablo Honey"/>
                 <AUTHOR value="Radiohead"/>
-                <PUBLICATION_YEAR value="1993-01-01"/>
+                <NET_PRICE value="0.1"/>
             </row>
         </AP_ALBUM>
     </output>

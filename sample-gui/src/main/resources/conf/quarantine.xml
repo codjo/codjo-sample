@@ -21,6 +21,7 @@
             <field>title</field>
             <field>author</field>
             <field>publicationYear</field>
+            <field>netPrice</field>
             <!-- Quarantine -->
             <field>errorLog</field>
             <field>errorType</field>
