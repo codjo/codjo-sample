@@ -9,7 +9,7 @@
 
     <groupId>net.codjo.sample</groupId>
     <artifactId>sample</artifactId>
-    <version>1.0-1</version>
+    <version>1.0-2-SNAPSHOT</version>
     <!-- START SNIPPET: super-pom -->
     <parent>
         <groupId>net.codjo.pom</groupId>
@@ -22,47 +22,47 @@
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-batch</artifactId>
-                <version>1.0-1</version>
+                <version>1.0-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-batch</artifactId>
-                <version>1.0-1</version>
+                <version>1.0-2-SNAPSHOT</version>
                 <classifier>assembly</classifier>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-gui</artifactId>
-                <version>1.0-1</version>
+                <version>1.0-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-server</artifactId>
-                <version>1.0-1</version>
+                <version>1.0-2-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-server</artifactId>
-                <version>1.0-1</version>
+                <version>1.0-2-SNAPSHOT</version>
                 <classifier>assembly</classifier>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-datagen</artifactId>
-                <version>1.0-1</version>
+                <version>1.0-2-SNAPSHOT</version>
                 <classifier>client</classifier>
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-datagen</artifactId>
-                <version>1.0-1</version>
+                <version>1.0-2-SNAPSHOT</version>
                 <classifier>server</classifier>
                 <!--  <scope>compile</scope>  -->
             </dependency>
             <dependency>
                 <groupId>net.codjo.sample</groupId>
                 <artifactId>sample-datagen</artifactId>
-                <version>1.0-1</version>
+                <version>1.0-2-SNAPSHOT</version>
                 <classifier>sql</classifier>
             </dependency>
         </dependencies>
